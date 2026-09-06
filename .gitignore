@@ -11,3 +11,7 @@ next-env.d.ts
 
 # Internal-only strategy notes — never publish, never route.
 /internal/
+
+# cloudflare / opennext build output
+.open-next
+.wrangler
