@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+/* ============================================================
+   FORTHASIA HEALTH — Brand System
+   Palette, typography scale, and global UX primitives.
+   ============================================================ */
+
+@theme {
+  /* Palette (Blueprint §1.1) */
+  --color-porcelain: #faf7f2; /* Light base — main backgrounds */
+  --color-ink-umber: #171310; /* Dark sections — footer, portal, high-contrast text */
+  --color-olympic-gold: #c2a15c; /* Primary accent — CTAs, dividers, active states */
+  --color-olive: #6e8b74; /* Verified / success — TEKMERIS badges */
+  --color-terracotta: #c4644a; /* Alert / conditional — visa warnings, compliance */
+  --color-ionian: #1f3a5f; /* Secondary accent — links, secondary headers */
+  --color-bronze: #8c6d2f; /* Discipline — subtle borders, metadata, footer text */
+
+  --color-porcelain-dim: #f0ebe1;
+  --color-ink-soft: #2a2320;
+  --color-parchment: #e9e2d8; /* body copy on umber/dark sections */
+  --color-hairline-dark: rgb(233 226 216 / 0.14); /* card borders on dark */
+
+  /* Typography — V-7 correction: Inter Tight skeleton, Fraunces retired
+     to Philosophy pull-quotes only, Cinzel retired site-wide. */
+  --font-heading: var(--font-inter-tight), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-editorial: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  color-scheme: light;
+  --page-max: 1160px;
+  --gutter: 24px;
+}
+
+* {
+  border-color: color-mix(in srgb, var(--color-bronze) 22%, transparent);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-porcelain);
+  color: var(--color-ink-soft);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* --- Typographic primitives --- */
+
+/* H1 / H2 / section heads — Inter Tight, tight tracking, dense. */
+.font-monument {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.text-h1 {
+  font-size: clamp(2.75rem, 5.5vw, 4.75rem); /* 44px → 76px */
+}
+
+.text-h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem); /* 32px → 48px */
+}
+
+/* Editorial accent — Fraunces italic. Philosophy page pull-quotes ONLY. */
+.font-editorial {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-optical-sizing: auto;
+}
+
+/* Card / block titles that replaced serif italics under V-7. */
+.font-card-title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.35;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; /* 12px */
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-bronze);
+}
+
+.data-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+/* Button label — mono, uppercase, tighter tracking than eyebrows. */
+.btn-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; /* 12px */
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* --- Layout helpers --- */
+
+.shell {
+  width: 100%;
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.rule-gold {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-olympic-gold) 18%,
+    var(--color-olympic-gold) 82%,
+    transparent
+  );
+}
+
+/* --- Focus visibility (a11y) --- */
+
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-ionian);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-olympic-gold) 35%, transparent);
+}
+
+/* --- Scroll-reveal (Philosophy stanzas etc.) --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
