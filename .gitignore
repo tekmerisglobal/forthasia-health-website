@@ -15,3 +15,6 @@ next-env.d.ts
 # cloudflare / opennext build output
 .open-next
 .wrangler
+
+# Design canvas / brand kit — kept local, not shipped with the repo.
+/design-system/
