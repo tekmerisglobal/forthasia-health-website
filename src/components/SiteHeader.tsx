@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   NAV_FULL_INLINE_COUNT,
   NAV_INLINE_COUNT,
@@ -34,9 +34,40 @@ function NavDropdown({
   items: NavItem[];
   pathname: string;
 }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDetailsElement>(null);
+
+  // Close when the route changes (covers clicking a link to another page).
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  // Close on outside click / Escape while open.
+  useEffect(() => {
+    if (!open) return;
+    const onPointerDown = (e: PointerEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
+
   return (
-    <details className="group relative">
-      <summary className="btn-label flex cursor-pointer list-none items-center gap-1 text-[var(--color-ink-soft)] transition-colors hover:text-[var(--color-ionian)] [&::-webkit-details-marker]:hidden">
+    <details ref={ref} open={open} className="group relative">
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((v) => !v);
+        }}
+        className="btn-label flex cursor-pointer list-none items-center gap-1 text-[var(--color-ink-soft)] transition-colors hover:text-[var(--color-ionian)] [&::-webkit-details-marker]:hidden"
+      >
         {label}
         <span aria-hidden className="text-[10px] transition-transform group-open:rotate-180">
           ▾
@@ -47,6 +78,7 @@ function NavDropdown({
           <Link
             key={item.href}
             href={item.href}
+            onClick={() => setOpen(false)}
             className={`block rounded px-3 py-2 copy-sm ${
               pathname === item.href
                 ? "text-[var(--color-ionian)]"
