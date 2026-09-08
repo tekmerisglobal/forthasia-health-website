@@ -13,14 +13,18 @@ export const primaryNav: NavItem[] = [
   { label: "Destinations", href: "/destinations" },
   { label: "Journey", href: "/journey" },
   { label: "Recovery", href: "/recovery" },
+  { label: "Wellness", href: "/wellness" },
   { label: "Visa & Entry", href: "/visa-guide" },
   { label: "Nutrition", href: "/nutrition" },
   { label: "Compliance", href: "/compliance" },
   { label: "Founder", href: "/founder" },
 ];
 
-/** First N items shown inline below 1100px; the rest collapse into "Menu". */
+/** 768–1099px: first N inline, the rest under "Menu". */
 export const NAV_INLINE_COUNT = 4;
+
+/** >=1100px: first N inline, the rest under "More". Keeps the bar on one line. */
+export const NAV_FULL_INLINE_COUNT = 6;
 
 export const portalUrl = "https://app.forthasiahealth.com";
 export const opsUrl = "https://ops.forthasiahealth.com";

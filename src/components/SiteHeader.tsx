@@ -3,11 +3,20 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { NAV_INLINE_COUNT, consultationHref, portalUrl, primaryNav } from "@/lib/nav";
+import {
+  NAV_FULL_INLINE_COUNT,
+  NAV_INLINE_COUNT,
+  consultationHref,
+  portalUrl,
+  primaryNav,
+  type NavItem,
+} from "@/lib/nav";
 import { RodOfAsclepius } from "./RodOfAsclepius";
 
 const inlineNav = primaryNav.slice(0, NAV_INLINE_COUNT);
 const overflowNav = primaryNav.slice(NAV_INLINE_COUNT);
+const fullInlineNav = primaryNav.slice(0, NAV_FULL_INLINE_COUNT);
+const fullOverflowNav = primaryNav.slice(NAV_FULL_INLINE_COUNT);
 
 const navLinkClass = (active: boolean) =>
   `whitespace-nowrap text-[0.9rem] tracking-wide transition-colors hover:text-[var(--color-ionian)] ${
@@ -15,6 +24,42 @@ const navLinkClass = (active: boolean) =>
       ? "text-[var(--color-ionian)] underline decoration-[var(--color-olympic-gold)] decoration-2 underline-offset-8"
       : "text-[var(--color-ink-soft)]"
   }`;
+
+function NavDropdown({
+  label,
+  items,
+  pathname,
+}: {
+  label: string;
+  items: NavItem[];
+  pathname: string;
+}) {
+  return (
+    <details className="group relative">
+      <summary className="btn-label flex cursor-pointer list-none items-center gap-1 text-[var(--color-ink-soft)] transition-colors hover:text-[var(--color-ionian)] [&::-webkit-details-marker]:hidden">
+        {label}
+        <span aria-hidden className="text-[10px] transition-transform group-open:rotate-180">
+          ▾
+        </span>
+      </summary>
+      <div className="absolute right-0 top-[calc(100%+12px)] w-48 rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] p-2 shadow-lg">
+        {items.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className={`block rounded px-3 py-2 copy-sm ${
+              pathname === item.href
+                ? "text-[var(--color-ionian)]"
+                : "text-[var(--color-ink-soft)] hover:bg-[var(--color-porcelain-dim)]"
+            }`}
+          >
+            {item.label}
+          </Link>
+        ))}
+      </div>
+    </details>
+  );
+}
 
 function Wordmark() {
   return (
@@ -63,18 +108,21 @@ export function SiteHeader() {
       <div className="shell flex h-20 items-center justify-between gap-4">
         <Wordmark />
 
-        {/* Full nav — single line, >=1100px */}
-        <nav className="hidden min-[1100px]:flex min-[1100px]:items-center min-[1100px]:gap-6" aria-label="Primary">
-          {primaryNav.map((item) => (
+        {/* Full nav — first 6 + "More", single line, >=1240px */}
+        <nav className="hidden min-[1240px]:flex min-[1240px]:items-center min-[1240px]:gap-4" aria-label="Primary">
+          {fullInlineNav.map((item) => (
             <Link key={item.href} href={item.href} className={navLinkClass(pathname === item.href)}>
               {item.label}
             </Link>
           ))}
+          {fullOverflowNav.length > 0 ? (
+            <NavDropdown label="More" items={fullOverflowNav} pathname={pathname} />
+          ) : null}
         </nav>
 
-        {/* Condensed nav — first 4 + "Menu" dropdown, 768–1099px only */}
+        {/* Condensed nav — first 4 + "Menu" dropdown, 768–1239px */}
         <nav
-          className="hidden md:max-[1099px]:flex md:max-[1099px]:items-center md:max-[1099px]:gap-5"
+          className="hidden md:max-[1239px]:flex md:max-[1239px]:items-center md:max-[1239px]:gap-5"
           aria-label="Primary (condensed)"
         >
           {inlineNav.map((item) => (
@@ -82,35 +130,13 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <details className="group relative">
-            <summary className="btn-label flex cursor-pointer list-none items-center gap-1 text-[var(--color-ink-soft)] transition-colors hover:text-[var(--color-ionian)] [&::-webkit-details-marker]:hidden">
-              Menu
-              <span aria-hidden className="text-[10px] transition-transform group-open:rotate-180">
-                ▾
-              </span>
-            </summary>
-            <div className="absolute right-0 top-[calc(100%+12px)] w-48 rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] p-2 shadow-lg">
-              {overflowNav.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`block rounded px-3 py-2 copy-sm ${
-                    pathname === item.href
-                      ? "text-[var(--color-ionian)]"
-                      : "text-[var(--color-ink-soft)] hover:bg-[var(--color-porcelain-dim)]"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </details>
+          <NavDropdown label="Menu" items={overflowNav} pathname={pathname} />
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-4 md:flex">
           <a
             href={portalUrl}
-            className="btn-label flex h-11 items-center justify-center whitespace-nowrap rounded-full border border-[var(--color-bronze)] px-5 text-[var(--color-ink-umber)] transition-colors hover:border-[var(--color-olympic-gold)] hover:text-[var(--color-ionian)]"
+            className="btn-label whitespace-nowrap text-[var(--color-ink-soft)] transition-colors hover:text-[var(--color-ionian)]"
           >
             Secure Login
           </a>

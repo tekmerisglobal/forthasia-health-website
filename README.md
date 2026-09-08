@@ -23,6 +23,7 @@ npm start        # serve the production build
 | `/destinations` | Boao Lecheng, Dental & Oral Health (price table), Anti-Aging & Longevity, TCM & Rehabilitation, the network ecosystem, market facts, secondary pathways (Bangkok, Mumbai) |
 | `/journey` | The 4-Phase Journey |
 | `/recovery` | Recovery & Tourism — the 8-Route program, curated pairings, recovery-friendly activities |
+| `/wellness` | The Wellness Continuum — medi-spa, longevity protocols, health retreats, lifestyle/prevention (V-14) |
 | `/visa-guide` | Law citation (1 Dec 2025) + interactive visa & entry checker (`src/data/visa.ts`, `src/components/VisaChecker.tsx`) |
 | `/nutrition` | The Neurogenomics Protocol |
 | `/compliance` | Compliance & ethics boundaries (text-only, deliberately) |

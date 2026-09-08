@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "Destinations & Treatments",
   description:
-    "The Hainan Boao Lecheng International Medical Tourism Pilot Zone — the regulatory oasis — plus strategic pathways in Bangkok and Mumbai.",
+    "The Hainan Boao Lecheng International Medical Tourism Pilot Zone — the regulatory oasis — plus mainland China's high-volume hospital network and strategic pathways in Bangkok and Mumbai.",
 };
 
 const boaoPoints = [
@@ -376,6 +376,57 @@ export default function DestinationsPage() {
             "Average international patient spend: >12,000 CNY",
           ]}
         />
+      </Section>
+
+      {/* Beyond the Island — mainland China (V-14 §1) */}
+      <Section>
+        <SectionHeading
+          eyebrow="Beyond Hainan"
+          title="Hainan Is the Gateway. China Is the Network."
+          lede="The visa-free island is where most journeys begin — but not where they must end. Mainland China operates one of the most experienced hospital systems on earth: Grade A tertiary institutions in Beijing, Shanghai, Guangzhou and Chengdu, whose surgeons perform in a year what many Western centres perform in a decade. Case volume is its own kind of expertise."
+        />
+        <div className="mt-6 max-w-2xl space-y-5 copy-sm text-[var(--color-ink-soft)]">
+          <p>
+            Dental is the clearest example. China&rsquo;s stomatology hospitals
+            and university dental departments deliver digital implantology,
+            CAD/CAM same-day crowns and full-arch rehabilitation on imported
+            implant systems — at a fraction of Western cost — and the
+            mainland&rsquo;s dental hubs rank among Asia&rsquo;s most advanced.
+          </p>
+          <p>
+            Where Hainan offers visa-free speed, the mainland offers depth:
+            complex oncology and cardiac surgery, orthopaedics at extraordinary
+            case volumes, and integrated TCM programmes inside the same
+            institutions. Mainland journeys follow the standard visa pathway —
+            and we coordinate every document, from invitation letter to
+            discharge summary.
+          </p>
+        </div>
+
+        <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+          {[
+            "Beijing — national cardiac and oncology centres of global standing",
+            "Shanghai — leading stomatology and dental hospitals; mature international departments",
+            "Guangzhou — university hospital networks with exceptional dental and oncology depth",
+            "Chengdu — among the largest surgical case volumes in Asia",
+          ].map((item) => (
+            <li
+              key={item}
+              className="rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] px-[22px] py-4 copy-sm text-[var(--color-ink-soft)]"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+        <p className="data-tag mt-6 text-[var(--color-bronze)]">
+          The mainland ecosystems we navigate — examples only. The FORTHASIA
+          NETWORK badge applies only after independent audit.
+        </p>
+
+        <Callout tone="gold" className="mt-8">
+          One country, two pathways: visa-free speed in Hainan, unmatched case
+          volume on the mainland. We facilitate both.
+        </Callout>
       </Section>
 
       <Section tone="dim">
