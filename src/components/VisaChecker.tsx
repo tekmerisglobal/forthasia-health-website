@@ -13,7 +13,7 @@ import {
 } from "@/data/visa";
 
 const fieldClass =
-  "w-full rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_45%,transparent)] bg-[var(--color-porcelain)] px-4 py-3 text-sm text-[var(--color-ink-umber)] focus-visible:outline-2";
+  "w-full rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_45%,transparent)] bg-[var(--color-porcelain)] px-4 py-3 copy-sm text-[var(--color-ink-umber)] focus-visible:outline-2";
 
 export function VisaChecker() {
   const [country, setCountry] = useState("");
@@ -128,8 +128,8 @@ export function VisaChecker() {
             <p className="font-card-title mt-2 text-[var(--color-ink-umber)]">
               {result.heading}
             </p>
-            <p className="mt-3 text-sm text-[var(--color-ink-soft)]">{result.body}</p>
-            <ul className="mt-4 space-y-1.5 text-sm text-[var(--color-ink-soft)]">
+            <p className="mt-3 copy-sm text-[var(--color-ink-soft)]">{result.body}</p>
+            <ul className="mt-4 space-y-1.5 copy-sm text-[var(--color-ink-soft)]">
               {result.notes.map((n) => (
                 <li key={n} className="flex gap-2">
                   <span aria-hidden className="text-[var(--color-olympic-gold)]">

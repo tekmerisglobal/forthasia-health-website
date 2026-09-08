@@ -63,7 +63,7 @@ export default function NutritionPage() {
                 <p className="font-card-title text-[var(--color-ink-umber)]">
                   {o.title}
                 </p>
-                <p className="mt-3 text-sm text-[var(--color-ink-soft)]">
+                <p className="mt-3 copy-sm text-[var(--color-ink-soft)]">
                   {o.body}
                 </p>
               </div>

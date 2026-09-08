@@ -52,15 +52,15 @@ export function PageHero({
       />
       <div className="shell relative">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h1 className="font-monument text-h2 mt-4 max-w-4xl text-[var(--color-ink-umber)]">
+        <h1 className="font-monument text-h1 mt-5 max-w-4xl text-balance text-[var(--color-ink-umber)]">
           {title}
         </h1>
         {lede ? (
-          <p className="mt-5 max-w-2xl text-lg text-[var(--color-ink-soft)]">
+          <p className="text-lede mt-6 max-w-2xl text-[var(--color-ink-soft)]">
             {lede}
           </p>
         ) : null}
-        {children ? <div className="mt-8">{children}</div> : null}
+        {children ? <div className="mt-9">{children}</div> : null}
       </div>
     </section>
   );
@@ -84,7 +84,7 @@ export function PullQuote({
     <figure className="mx-auto max-w-3xl text-center">
       <div aria-hidden className="rule-gold mx-auto mb-8 w-24" />
       <blockquote
-        className={`${face} text-2xl leading-snug md:text-3xl ${
+        className={`${face} text-[1.75rem] leading-snug md:text-[2.25rem] ${
           onDark ? "text-[var(--color-porcelain)]" : "text-[var(--color-ionian)]"
         }`}
       >
@@ -202,7 +202,7 @@ function DiptychPanel({
       <p className="font-card-title mt-3 text-[var(--color-ink-umber)]">
         {label}
       </p>
-      <p className="mt-2 max-w-xs text-sm text-[color-mix(in_srgb,var(--color-ink-umber)_75%,transparent)]">
+      <p className="mt-2 max-w-xs copy-sm text-[color-mix(in_srgb,var(--color-ink-umber)_75%,transparent)]">
         {note}
       </p>
       <span className="data-tag absolute bottom-4 right-5 rounded-full bg-[color-mix(in_srgb,var(--color-ink-umber)_12%,transparent)] px-2 py-0.5 text-[color-mix(in_srgb,var(--color-ink-umber)_60%,transparent)]">
@@ -274,7 +274,7 @@ export function ImageSlot({
           aspect === "wide" ? "min-h-[180px] md:min-h-[260px]" : "min-h-[260px]"
         }`}
       >
-        <p className="max-w-sm text-sm text-[color-mix(in_srgb,var(--color-ink-umber)_75%,transparent)]">
+        <p className="max-w-sm copy-sm text-[color-mix(in_srgb,var(--color-ink-umber)_75%,transparent)]">
           {asset.brief}
         </p>
         <span className="data-tag absolute right-5 top-5 rounded-full bg-[color-mix(in_srgb,var(--color-ink-umber)_12%,transparent)] px-2 py-0.5 text-[color-mix(in_srgb,var(--color-ink-umber)_60%,transparent)]">
@@ -311,7 +311,7 @@ export function FactsBand({
       <p className="eyebrow text-[var(--color-bronze)]">{label}</p>
       <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">
         {facts.map((f) => (
-          <li key={f} className="flex gap-2 text-sm text-[var(--color-ink-soft)]">
+          <li key={f} className="flex gap-2 copy-sm text-[var(--color-ink-soft)]">
             <span aria-hidden className="text-[var(--color-olympic-gold)]">
               —
             </span>
@@ -341,7 +341,7 @@ export function EmailCTA({
     <div
       className={`rounded-lg border border-[color-mix(in_srgb,var(--color-olympic-gold)_45%,transparent)] bg-[color-mix(in_srgb,var(--color-olympic-gold)_8%,transparent)] px-[22px] py-6 ${className}`}
     >
-      <p className="max-w-2xl text-sm text-[var(--color-ink-soft)]">{body}</p>
+      <p className="max-w-2xl copy-sm text-[var(--color-ink-soft)]">{body}</p>
       <a
         href={`mailto:${email}`}
         className="btn-label mt-4 inline-flex h-11 items-center justify-center whitespace-nowrap rounded-full bg-[var(--color-ink-umber)] px-6 text-[var(--color-porcelain)] transition-colors hover:bg-[var(--color-ionian)]"
@@ -390,8 +390,8 @@ export function StatCard({
 }) {
   return (
     <div className="rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] p-6">
-      <p className="font-monument text-2xl text-[var(--color-ionian)]">{value}</p>
-      <p className="mt-2 text-sm text-[var(--color-ink-soft)]">{label}</p>
+      <p className="font-monument text-[1.875rem] text-[var(--color-ionian)]">{value}</p>
+      <p className="mt-2 copy-sm text-[var(--color-ink-soft)]">{label}</p>
     </div>
   );
 }
@@ -419,7 +419,7 @@ export function SectionHeading({
         </p>
       ) : null}
       <h2
-        className={`font-monument text-h2 mt-4 text-balance ${
+        className={`font-monument text-h2 mt-3 text-balance ${
           onDark ? "text-[var(--color-porcelain)]" : "text-[var(--color-ink-umber)]"
         }`}
       >
@@ -427,7 +427,7 @@ export function SectionHeading({
       </h2>
       {lede ? (
         <p
-          className={`mt-4 ${
+          className={`text-lede mt-5 ${
             onDark
               ? "text-[color-mix(in_srgb,var(--color-porcelain)_82%,transparent)]"
               : "text-[var(--color-ink-soft)]"

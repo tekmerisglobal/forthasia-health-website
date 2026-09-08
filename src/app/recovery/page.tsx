@@ -59,7 +59,7 @@ export default function RecoveryPage() {
             <Reveal key={r.title}>
               <div className="h-full rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] px-[22px] py-6">
                 <p className="font-card-title text-[var(--color-ink-umber)]">{r.title}</p>
-                <p className="mt-3 text-sm text-[var(--color-ink-soft)]">{r.body}</p>
+                <p className="mt-3 copy-sm text-[var(--color-ink-soft)]">{r.body}</p>
               </div>
             </Reveal>
           ))}
@@ -72,7 +72,7 @@ export default function RecoveryPage() {
           {activities.map((a) => (
             <li
               key={a}
-              className="rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] px-[22px] py-4 text-sm text-[var(--color-ink-soft)]"
+              className="rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] px-[22px] py-4 copy-sm text-[var(--color-ink-soft)]"
             >
               {a}
             </li>

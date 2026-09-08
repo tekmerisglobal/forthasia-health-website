@@ -68,7 +68,7 @@ export default function CompliancePage() {
               <p className="font-card-title text-[var(--color-ink-umber)]">
                 {r.title}
               </p>
-              <p className="mt-3 text-sm text-[var(--color-ink-soft)]">{r.body}</p>
+              <p className="mt-3 copy-sm text-[var(--color-ink-soft)]">{r.body}</p>
             </div>
           ))}
         </div>

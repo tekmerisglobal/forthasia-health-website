@@ -4,7 +4,7 @@ import Script from "next/script";
 import { useState } from "react";
 
 const fieldClass =
-  "w-full rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_45%,transparent)] bg-[var(--color-porcelain)] px-4 py-3 text-sm text-[var(--color-ink-umber)]";
+  "w-full rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_45%,transparent)] bg-[var(--color-porcelain)] px-4 py-3 copy-sm text-[var(--color-ink-umber)]";
 
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
@@ -52,7 +52,7 @@ export function IntakeForm() {
         <p className="font-card-title text-[var(--color-ink-umber)]">
           Thank you. A steward will respond within one business day.
         </p>
-        <p className="mt-3 text-sm text-[var(--color-ink-soft)]">
+        <p className="mt-3 copy-sm text-[var(--color-ink-soft)]">
           When we reply, you will receive a secure link to the HIIC Vault. Please
           do not send medical records by email — they are only accepted through
           the Vault.
@@ -117,7 +117,7 @@ export function IntakeForm() {
       </label>
 
       {/* No-PHI consent — kept immediately above the submit button per policy. */}
-      <label className="flex items-start gap-3 text-sm text-[var(--color-ink-soft)]">
+      <label className="flex items-start gap-3 copy-sm text-[var(--color-ink-soft)]">
         <input type="checkbox" name="consent" required className="mt-1" />
         <span>
           I understand Forthasia Health is a facilitation and consulting entity,
@@ -134,7 +134,7 @@ export function IntakeForm() {
       ) : null}
 
       {status === "error" && (
-        <p className="text-sm text-[var(--color-terracotta)]">
+        <p className="copy-sm text-[var(--color-terracotta)]">
           Something went wrong. Please try again, or email the concierge desk
           directly.
         </p>

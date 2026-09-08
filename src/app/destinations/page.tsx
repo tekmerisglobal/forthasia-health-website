@@ -83,7 +83,7 @@ export default function DestinationsPage() {
                 <p className="font-card-title text-[var(--color-ink-umber)]">
                   {p.title}
                 </p>
-                <p className="mt-3 text-sm text-[var(--color-ink-soft)]">
+                <p className="mt-3 copy-sm text-[var(--color-ink-soft)]">
                   {p.body}
                 </p>
               </div>
@@ -154,7 +154,7 @@ export default function DestinationsPage() {
           ].map((item) => (
             <li
               key={item}
-              className="rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] px-[22px] py-4 text-sm text-[var(--color-ink-soft)]"
+              className="rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] px-[22px] py-4 copy-sm text-[var(--color-ink-soft)]"
             >
               {item}
             </li>
@@ -171,7 +171,7 @@ export default function DestinationsPage() {
           Illustrative price context — confirm at consultation
         </p>
         <div className="mt-4 overflow-x-auto rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)]">
-          <table className="w-full min-w-[520px] border-collapse text-sm">
+          <table className="w-full min-w-[520px] border-collapse copy-sm">
             <thead>
               <tr className="border-b border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain-dim)] text-left">
                 <th className="eyebrow px-[22px] py-3 font-normal text-[var(--color-bronze)]">
@@ -272,7 +272,7 @@ export default function DestinationsPage() {
           <span className="data-tag text-[var(--color-olympic-gold)]">
             Pathway · TCM & Rehabilitation
           </span>
-          <p className="mt-3 max-w-2xl text-sm text-[var(--color-ink-soft)]">
+          <p className="mt-3 max-w-2xl copy-sm text-[var(--color-ink-soft)]">
             Acupuncture, tuina, cupping, and herbal rehabilitation — the
             same disciplines our founder trained in — delivered at
             institutions we audit before we introduce you.
@@ -314,7 +314,7 @@ export default function DestinationsPage() {
           ].map((item) => (
             <li
               key={item}
-              className="rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] px-[22px] py-4 text-sm text-[var(--color-ink-soft)]"
+              className="rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] px-[22px] py-4 copy-sm text-[var(--color-ink-soft)]"
             >
               {item}
             </li>
@@ -361,7 +361,7 @@ export default function DestinationsPage() {
                     Partner network — build phase
                   </span>
                 </div>
-                <p className="mt-3 text-sm text-[var(--color-ink-soft)]">{s.body}</p>
+                <p className="mt-3 copy-sm text-[var(--color-ink-soft)]">{s.body}</p>
               </div>
             </div>
           ))}

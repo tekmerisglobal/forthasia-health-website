@@ -201,7 +201,7 @@ export default function PhilosophyPage() {
             </p>
           </div>
 
-          <p className="mt-6 max-w-2xl text-sm text-[var(--color-ink-soft)]">
+          <p className="mt-6 max-w-2xl copy-sm text-[var(--color-ink-soft)]">
             The full standard — what verification covers, what it never
             covers, and how independence is funded — lives on{" "}
             <Link
@@ -260,7 +260,7 @@ export default function PhilosophyPage() {
               <p className="eyebrow text-[color-mix(in_srgb,var(--color-olympic-gold)_92%,white)]">
                 Olympia
               </p>
-              <p className="font-editorial mt-2 text-lg text-[var(--color-porcelain)]">
+              <p className="font-editorial mt-2 text-[1.375rem] text-[var(--color-porcelain)]">
                 We honour the body as a sacred vessel.
               </p>
             </div>
@@ -268,7 +268,7 @@ export default function PhilosophyPage() {
               <p className="eyebrow text-[color-mix(in_srgb,var(--color-olympic-gold)_92%,white)]">
                 Sparta
               </p>
-              <p className="font-editorial mt-2 text-lg text-[var(--color-porcelain)]">
+              <p className="font-editorial mt-2 text-[1.375rem] text-[var(--color-porcelain)]">
                 We verify until it stands upright.
               </p>
             </div>

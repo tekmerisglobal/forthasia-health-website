@@ -81,7 +81,7 @@ export default function JourneyPage() {
                   <span className="font-monument text-3xl text-[var(--color-olympic-gold)]">
                     {p.n}
                   </span>
-                  <h2 className="font-monument text-xl text-[var(--color-ink-umber)] md:text-2xl">
+                  <h2 className="text-h3 text-[var(--color-ink-umber)]">
                     {p.title}
                   </h2>
                 </div>
@@ -92,7 +92,7 @@ export default function JourneyPage() {
                   {p.steps.map((s) => (
                     <li
                       key={s}
-                      className="flex gap-2 text-sm text-[var(--color-ink-soft)]"
+                      className="flex gap-2 copy-sm text-[var(--color-ink-soft)]"
                     >
                       <span aria-hidden className="text-[var(--color-olive)]">
                         ✓

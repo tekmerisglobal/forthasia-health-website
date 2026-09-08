@@ -77,10 +77,10 @@ export default function ConsultationPage() {
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span>
-                      <span className="block text-sm font-medium text-[var(--color-ink-umber)]">
+                      <span className="block copy-sm font-medium text-[var(--color-ink-umber)]">
                         {t}
                       </span>
-                      <span className="block text-sm text-[var(--color-ink-soft)]">
+                      <span className="block copy-sm text-[var(--color-ink-soft)]">
                         {d}
                       </span>
                     </span>
@@ -118,7 +118,7 @@ export default function ConsultationPage() {
               >
                 {r.email}
               </a>
-              <p className="mt-3 text-sm text-[var(--color-ink-soft)]">{r.body}</p>
+              <p className="mt-3 copy-sm text-[var(--color-ink-soft)]">{r.body}</p>
             </div>
           ))}
         </div>

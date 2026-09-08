@@ -29,7 +29,7 @@ export function LegalClauses({ clauses }: { clauses: Clause[] }) {
             </span>
             {c.heading}
           </p>
-          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-[var(--color-ink-soft)]">
+          <p className="mt-2 max-w-3xl copy-sm leading-relaxed text-[var(--color-ink-soft)]">
             {c.body}
           </p>
         </li>

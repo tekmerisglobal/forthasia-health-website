@@ -10,7 +10,7 @@ const inlineNav = primaryNav.slice(0, NAV_INLINE_COUNT);
 const overflowNav = primaryNav.slice(NAV_INLINE_COUNT);
 
 const navLinkClass = (active: boolean) =>
-  `whitespace-nowrap text-[0.82rem] tracking-wide transition-colors hover:text-[var(--color-ionian)] ${
+  `whitespace-nowrap text-[0.9rem] tracking-wide transition-colors hover:text-[var(--color-ionian)] ${
     active
       ? "text-[var(--color-ionian)] underline decoration-[var(--color-olympic-gold)] decoration-2 underline-offset-8"
       : "text-[var(--color-ink-soft)]"
@@ -18,13 +18,17 @@ const navLinkClass = (active: boolean) =>
 
 function Wordmark() {
   return (
-    <Link href="/" className="flex items-center gap-3" aria-label="Forthasia Health — home">
-      <RodOfAsclepius className="h-8 w-8 shrink-0 text-[var(--color-olympic-gold)]" />
+    <Link
+      href="/"
+      className="flex items-center gap-3.5"
+      aria-label="Forthasia Health — home"
+    >
+      <RodOfAsclepius className="h-11 w-11 shrink-0 text-[var(--color-olympic-gold)]" />
       <span className="leading-none">
-        <span className="block font-body text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-ink-umber)]">
+        <span className="block font-body text-[1.4rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-ink-umber)]">
           Forthasia
         </span>
-        <span className="btn-label mt-1 block text-[10px] tracking-[0.4em] text-[var(--color-bronze)]">
+        <span className="mt-1.5 block font-mono text-[0.72rem] uppercase tracking-[0.34em] text-[var(--color-bronze)]">
           Health
         </span>
       </span>
@@ -56,7 +60,7 @@ export function SiteHeader() {
           : "border-transparent bg-transparent"
       }`}
     >
-      <div className="shell flex h-16 items-center justify-between gap-4">
+      <div className="shell flex h-20 items-center justify-between gap-4">
         <Wordmark />
 
         {/* Full nav — single line, >=1100px */}
@@ -90,7 +94,7 @@ export function SiteHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`block rounded px-3 py-2 text-sm ${
+                  className={`block rounded px-3 py-2 copy-sm ${
                     pathname === item.href
                       ? "text-[var(--color-ionian)]"
                       : "text-[var(--color-ink-soft)] hover:bg-[var(--color-porcelain-dim)]"
@@ -140,7 +144,7 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="border-b border-[color-mix(in_srgb,var(--color-bronze)_18%,transparent)] py-3 text-sm text-[var(--color-ink-soft)]"
+                className="border-b border-[color-mix(in_srgb,var(--color-bronze)_18%,transparent)] py-3 copy-sm text-[var(--color-ink-soft)]"
               >
                 {item.label}
               </Link>

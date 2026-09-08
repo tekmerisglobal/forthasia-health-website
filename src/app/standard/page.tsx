@@ -83,7 +83,7 @@ export default function StandardPage() {
       <Section tone="ink">
         <div className="mx-auto grid max-w-3xl gap-8 text-center sm:grid-cols-2 sm:text-left">
           <div>
-            <p className="font-monument text-xl text-[var(--color-porcelain)]">
+            <p className="text-h3 text-[var(--color-porcelain)]">
               We don&rsquo;t book journeys. We steward outcomes.
             </p>
             <p className="data-tag mt-3 text-[color-mix(in_srgb,var(--color-olympic-gold)_92%,white)]">
@@ -91,7 +91,7 @@ export default function StandardPage() {
             </p>
           </div>
           <div>
-            <p className="font-monument text-xl text-[var(--color-porcelain)]">
+            <p className="text-h3 text-[var(--color-porcelain)]">
               We verify what others take on trust.
             </p>
             <p className="data-tag mt-3 text-[color-mix(in_srgb,var(--color-olympic-gold)_92%,white)]">
@@ -122,7 +122,7 @@ export default function StandardPage() {
                 <p className="font-card-title mt-2 text-[var(--color-ink-umber)]">
                   {p.title}
                 </p>
-                <p className="mt-3 text-sm text-[var(--color-ink-soft)]">
+                <p className="mt-3 copy-sm text-[var(--color-ink-soft)]">
                   {p.body}
                 </p>
               </div>
@@ -141,7 +141,7 @@ export default function StandardPage() {
                 <span className="data-tag shrink-0 text-[var(--color-olympic-gold)]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <p className="text-sm text-[var(--color-ink-soft)]">
+                <p className="copy-sm text-[var(--color-ink-soft)]">
                   <span className="font-medium text-[var(--color-ink-umber)]">
                     {r.lead}
                   </span>{" "}
@@ -151,7 +151,7 @@ export default function StandardPage() {
             </Reveal>
           ))}
         </ol>
-        <p className="mt-6 max-w-2xl text-sm text-[var(--color-ink-soft)]">
+        <p className="mt-6 max-w-2xl copy-sm text-[var(--color-ink-soft)]">
           Why we verify — the philosophy behind the standard — lives on our{" "}
           <Link
             href="/philosophy"

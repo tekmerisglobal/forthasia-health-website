@@ -43,7 +43,7 @@ export default function FounderPage() {
               {registrations.map((r) => (
                 <li
                   key={r}
-                  className="flex gap-3 text-sm text-[var(--color-ink-soft)]"
+                  className="flex gap-3 copy-sm text-[var(--color-ink-soft)]"
                 >
                   <span aria-hidden className="text-[var(--color-olympic-gold)]">
                     —

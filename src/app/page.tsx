@@ -53,10 +53,10 @@ export default function HomePage() {
           <p className="eyebrow text-[color-mix(in_srgb,#c2a15c_92%,white)]">
             Forthasia Health // From the land of Olympia. Forth to health.
           </p>
-          <h1 className="font-monument text-h1 mt-4 max-w-4xl">
+          <h1 className="font-monument text-hero mt-5 max-w-4xl text-balance">
             The Global Standard in Medical Stewardship
           </h1>
-          <p className="mt-5 max-w-2xl text-lg text-[color-mix(in_srgb,#faf7f2_85%,transparent)]">
+          <p className="text-lede mt-6 max-w-2xl text-[color-mix(in_srgb,#faf7f2_88%,transparent)]">
             Navigating the intersection of advanced regenerative medicine,
             diagnostic confirmation, and longevity. Headquartered in Hainan,
             China.
@@ -69,7 +69,7 @@ export default function HomePage() {
                   <span className="font-card-title text-[var(--color-porcelain)]">
                     {b.label}
                   </span>
-                  <span className="mt-2 block text-sm text-[color-mix(in_srgb,#faf7f2_70%,transparent)]">
+                  <span className="mt-2 block copy-sm text-[color-mix(in_srgb,#faf7f2_70%,transparent)]">
                     {b.note}
                   </span>
                   <span
@@ -107,7 +107,7 @@ export default function HomePage() {
             <p className="font-card-title text-[var(--color-ionian)]">
               &ldquo;We Don&rsquo;t Refer. We Verify.&rdquo;
             </p>
-            <p className="text-sm text-[var(--color-ink-soft)]">
+            <p className="copy-sm text-[var(--color-ink-soft)]">
               A logistical, translational, and verification facilitator. We do
               not diagnose, treat, or prescribe.
             </p>
@@ -141,7 +141,7 @@ export default function HomePage() {
               ].map((b) => (
                 <li
                   key={b}
-                  className="rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] px-[22px] py-5 text-sm text-[var(--color-ink-soft)]"
+                  className="rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] px-[22px] py-5 copy-sm text-[var(--color-ink-soft)]"
                 >
                   {b}
                 </li>
@@ -225,7 +225,7 @@ export default function HomePage() {
                 <p className="font-card-title mt-2 text-[var(--color-ink-umber)]">
                   {t}
                 </p>
-                <p className="mt-2 text-sm text-[var(--color-ink-soft)]">{d}</p>
+                <p className="mt-2 copy-sm text-[var(--color-ink-soft)]">{d}</p>
               </div>
             </Reveal>
           ))}

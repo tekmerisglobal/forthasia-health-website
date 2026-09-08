@@ -30,13 +30,13 @@ export function SiteFooter() {
       {/* 1. Logo + nav + Secure Inquiries / Corporate HQ / Client Portal (V-11) */}
       <div className="shell grid gap-12 py-16 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
-          <div className="flex items-center gap-3">
-            <RodOfAsclepius className="h-9 w-9 text-[var(--color-olympic-gold)]" />
+          <div className="flex items-center gap-3.5">
+            <RodOfAsclepius className="h-11 w-11 text-[var(--color-olympic-gold)]" />
             <span className="leading-none">
-              <span className="block font-body text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-porcelain)]">
+              <span className="block font-body text-[1.4rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-porcelain)]">
                 Forthasia
               </span>
-              <span className="btn-label mt-1 block text-[10px] tracking-[0.4em] text-[var(--color-olympic-gold)]">
+              <span className="mt-1.5 block font-mono text-[0.72rem] uppercase tracking-[0.34em] text-[var(--color-olympic-gold)]">
                 Health
               </span>
             </span>
@@ -50,7 +50,7 @@ export function SiteFooter() {
           <h2 className="eyebrow text-[color-mix(in_srgb,var(--color-bronze)_90%,white)]">
             The Site
           </h2>
-          <ul className="mt-4 space-y-2 text-sm">
+          <ul className="mt-4 space-y-2 copy-sm">
             {primaryNav.map((item) => (
               <li key={item.href}>
                 <Link
@@ -68,7 +68,7 @@ export function SiteFooter() {
           <h2 className="eyebrow text-[color-mix(in_srgb,var(--color-bronze)_90%,white)]">
             Secure Inquiries
           </h2>
-          <ul className="mt-4 space-y-2 text-sm text-[color-mix(in_srgb,var(--color-porcelain)_78%,transparent)]">
+          <ul className="mt-4 space-y-2 copy-sm text-[color-mix(in_srgb,var(--color-porcelain)_78%,transparent)]">
             <li>
               For VIP Medical Concierge & Clinical Routing:{" "}
               <a
@@ -92,7 +92,7 @@ export function SiteFooter() {
           <h2 className="eyebrow mt-6 text-[color-mix(in_srgb,var(--color-bronze)_90%,white)]">
             Corporate Headquarters
           </h2>
-          <p className="mt-4 text-sm text-[color-mix(in_srgb,var(--color-porcelain)_78%,transparent)]">
+          <p className="mt-4 copy-sm text-[color-mix(in_srgb,var(--color-porcelain)_78%,transparent)]">
             Haikou Meixi International Trade Co., Ltd.
             <br />
             Hainan Free Trade Port, P.R. China
@@ -110,7 +110,7 @@ export function SiteFooter() {
       {/* 2. Compliance block (verbatim, as locked) */}
       <div className="border-t border-[color-mix(in_srgb,var(--color-bronze)_35%,transparent)]">
         <div className="shell py-6">
-          <p className="max-w-2xl text-sm text-[color-mix(in_srgb,var(--color-porcelain)_82%,transparent)]">
+          <p className="max-w-2xl copy-sm text-[color-mix(in_srgb,var(--color-porcelain)_82%,transparent)]">
             {COMPLIANCE_BLOCK}
           </p>
         </div>
@@ -118,7 +118,7 @@ export function SiteFooter() {
 
       {/* 3. Legal links row */}
       <div className="border-t border-[color-mix(in_srgb,var(--color-bronze)_35%,transparent)]">
-        <div className="shell flex flex-wrap gap-x-6 gap-y-2 py-6 text-sm">
+        <div className="shell flex flex-wrap gap-x-6 gap-y-2 py-6 copy-sm">
           {legalLinks.map((l, i) => (
             <span key={l.href} className="flex items-center gap-6">
               <Link
@@ -153,7 +153,7 @@ export function SiteFooter() {
       {/* 5. Master close */}
       <div className="border-t border-[color-mix(in_srgb,var(--color-bronze)_35%,transparent)]">
         <div className="shell py-6">
-          <p className="text-sm font-medium text-[var(--color-parchment)]">
+          <p className="copy-sm font-medium text-[var(--color-parchment)]">
             Forth from Greece. Forth to Health. Forthasia.
           </p>
         </div>
