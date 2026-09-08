@@ -419,7 +419,7 @@ export function SectionHeading({
         </p>
       ) : null}
       <h2
-        className={`font-monument text-h2 mt-4 ${
+        className={`font-monument text-h2 mt-4 text-balance ${
           onDark ? "text-[var(--color-porcelain)]" : "text-[var(--color-ink-umber)]"
         }`}
       >

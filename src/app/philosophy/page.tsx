@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import {
   CTAButton,
@@ -145,6 +146,79 @@ export default function PhilosophyPage() {
           </Reveal>
         </Section>
       ))}
+
+      {/* The Matching Doctrine — the "why" of verification (V-13 §1). */}
+      <Section tone="dim">
+        <Reveal>
+          <SectionHeading
+            eyebrow="The Matching Doctrine"
+            title="The Condition Chooses The Hospital. We Only Refuse To Guess."
+          />
+          <div className="mt-6 max-w-2xl space-y-5 text-[var(--color-ink-soft)]">
+            <p>
+              Every journey in medical tourism fails or succeeds at one
+              moment: the match. Not the flight, not the visa, not the lobby —
+              the decision about which facility a patient&rsquo;s condition is
+              entrusted to.
+            </p>
+            <p>
+              Most of the industry answers that question commercially. We
+              answer it clinically. A patient with a recurrent head-and-neck
+              tumour does not need a beautiful atrium; they need a verified
+              boron-neutron-capture programme and a team that has run it
+              before. A patient seeking a knee replacement does not need a
+              gene-therapy licence; they need an orthopaedic department with
+              documented case volumes, honest outcome data, and
+              English-speaking coordination at the door. The condition chooses
+              the facility. Our only job is to refuse to introduce the two
+              until we have stood in the room and checked.
+            </p>
+            <p>
+              That checking is not ours alone. For verification we engage
+              TEKMERIS GLOBAL, an independent compliance and verification
+              specialist operating on the ground in China. They hold no
+              affiliation with any hospital, accept no commissions or referral
+              fees from any facility, and are engaged solely by us — for a
+              flat fee, per facility, per cycle. Hospitals do not pay to be
+              listed. No facility can influence its own verification.
+            </p>
+            <p>
+              So by the time we match you to a hospital, three things have
+              already happened: the licence has been confirmed at source
+              against official registries; the facility, its clinical
+              processes and its documentation have been reviewed on site; and
+              the specific capability your pathway requires — case volumes,
+              specialist presence, translation, emergency readiness — has been
+              verified for your condition, not in general.
+            </p>
+            <p>
+              Only then does matching become what medicine has always intended
+              it to be: the right patient, placed in the right hands, for the
+              right reasons. The Hellanodikai of Ancient Elis measured what
+              was, not what was claimed. Two and a half thousand years later,
+              on a different coast, so do we.
+            </p>
+          </div>
+
+          <p className="mt-6 max-w-2xl text-sm text-[var(--color-ink-soft)]">
+            The full standard — what verification covers, what it never
+            covers, and how independence is funded — lives on{" "}
+            <Link
+              href="/standard"
+              className="text-[var(--color-ionian)] underline decoration-[var(--color-olympic-gold)] decoration-2 underline-offset-4 hover:text-[var(--color-ink-umber)]"
+            >
+              The FORTHASIA Standard
+            </Link>
+            .
+          </p>
+
+          <p className="mt-6 max-w-2xl text-xs leading-relaxed text-[var(--color-bronze)]">
+            Verification covers licensing, facility standards, and compliance
+            processes as at the audit date; it is not a guarantee of
+            individual clinical outcomes.
+          </p>
+        </Reveal>
+      </Section>
 
       {/* Modern sanctuaries — imagery manifest closes the diptych sequence single-sided. */}
       <Section>

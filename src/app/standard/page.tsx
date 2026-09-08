@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import {
   Callout,
@@ -9,6 +10,29 @@ import {
   Section,
   SectionHeading,
 } from "@/components/ui";
+
+const matchingRules = [
+  {
+    lead: "The condition leads.",
+    body: "Matching begins with your diagnosis and records — never with a commission, a contract, or a convenience.",
+  },
+  {
+    lead: "Capability over reputation.",
+    body: "We verify the specific pathway you need — case volumes, specialist presence, translation quality, emergency readiness — not a facility's general prestige.",
+  },
+  {
+    lead: "Verification before introduction.",
+    body: "No facility appears in any proposal until TEKMERIS GLOBAL has completed an on-site verification cycle for that pathway.",
+  },
+  {
+    lead: "Independence is funded by us.",
+    body: "We pay a flat verification fee per facility, per cycle. Hospitals pay nothing — not to be listed, not to be verified, not to be matched.",
+  },
+  {
+    lead: "Re-verified on cycle.",
+    body: "Verification is a status with a date, not a permanent badge. An expired cycle removes a facility from matching automatically.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "The Forthasia Standard",
@@ -83,6 +107,11 @@ export default function StandardPage() {
           title="Five checks, applied the same way every time"
           lede="TEKMERIS GLOBAL is the Spartan half of the philosophy made operational. The same QC/QA discipline we apply to peptide factories and supply chains is applied here to hospitals and clinics — verified on site, on the ground, in person. Tested until the structure holds under load."
         />
+        <p className="mt-4 max-w-2xl text-xs leading-relaxed text-[var(--color-bronze)]">
+          Verification covers licensing, facility standards, and compliance
+          processes as at the audit date; it is not a guarantee of individual
+          clinical outcomes.
+        </p>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {pillars.map((p) => (
             <Reveal key={p.tag}>
@@ -100,6 +129,38 @@ export default function StandardPage() {
             </Reveal>
           ))}
         </div>
+      </Section>
+
+      {/* How hospitals are chosen & matched — the "how" (V-13 §2). */}
+      <Section tone="dim">
+        <SectionHeading title="How Hospitals Are Chosen & Matched" />
+        <ol className="mt-8 space-y-5">
+          {matchingRules.map((r, i) => (
+            <Reveal as="li" key={r.lead}>
+              <div className="flex gap-4 rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] px-[22px] py-5">
+                <span className="data-tag shrink-0 text-[var(--color-olympic-gold)]">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="text-sm text-[var(--color-ink-soft)]">
+                  <span className="font-medium text-[var(--color-ink-umber)]">
+                    {r.lead}
+                  </span>{" "}
+                  {r.body}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </ol>
+        <p className="mt-6 max-w-2xl text-sm text-[var(--color-ink-soft)]">
+          Why we verify — the philosophy behind the standard — lives on our{" "}
+          <Link
+            href="/philosophy"
+            className="text-[var(--color-ionian)] underline decoration-[var(--color-olympic-gold)] decoration-2 underline-offset-4 hover:text-[var(--color-ink-umber)]"
+          >
+            Philosophy page
+          </Link>
+          .
+        </p>
       </Section>
 
       <Section>
