@@ -136,7 +136,7 @@ export default function HomePage() {
               {[
                 "Practitioner-founded — registered acupuncturist & naturopath (Australia)",
                 "On the ground in Haikou",
-                "Independent verification — TEKMERIS GLOBAL protocol",
+                "Independent verification — every facility audited on site by TEKMERIS GLOBAL",
                 "Facilitator ethics — you pay the hospital directly; our fee is disclosed",
               ].map((b) => (
                 <li

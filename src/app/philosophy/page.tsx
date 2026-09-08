@@ -61,7 +61,7 @@ const stanzas = [
   {
     eyebrow: "The Greek Lineage · III",
     title: "Sparta, and the name Forthasia",
-    body: "From Sparta comes the upright stance — and the name Forthasia. The Greek root is tekmerion: proof, sure sign, evidence — and it is from tekmerion that our verification engine, TEKMERIS GLOBAL, takes its own. To stand upright is to be verified: tested until the structure holds under load.",
+    body: "From Sparta comes the upright stance — and the name Forthasia. The Greek root is tekmerion: proof, sure sign, evidence. To stand upright is to be verified: tested until the structure holds under load.",
     diptych: {
       ancient: {
         label: "Taygetos",
@@ -175,12 +175,13 @@ export default function PhilosophyPage() {
             </p>
             <p>
               That checking is not ours alone. For verification we engage
-              TEKMERIS GLOBAL, an independent compliance and verification
-              specialist operating on the ground in China. They hold no
-              affiliation with any hospital, accept no commissions or referral
-              fees from any facility, and are engaged solely by us — for a
-              flat fee, per facility, per cycle. Hospitals do not pay to be
-              listed. No facility can influence its own verification.
+              TEKMERIS GLOBAL, an independent verification partner operating on
+              the ground in China, to inspect each hospital, healthcare centre,
+              medi-spa and medical-device programme. They hold no affiliation
+              with any facility, accept no commissions or referral fees, and
+              are engaged solely by us — for a flat fee, per facility, per
+              cycle. Hospitals do not pay to be listed. No facility can
+              influence its own verification.
             </p>
             <p>
               So by the time we match you to a hospital, three things have

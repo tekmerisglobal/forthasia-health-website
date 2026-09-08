@@ -23,7 +23,7 @@ const offerings = [
   },
   {
     title: "The Longevity Plate",
-    body: "Mediterranean longevity fats combined with Eastern herbal tonics and peptide-supportive macronutrient design — a physician-guided plate, not a diet.",
+    body: "Mediterranean longevity fats combined with Eastern herbal tonics and recovery-focused macronutrient design — a physician-guided plate, not a diet.",
   },
 ];
 

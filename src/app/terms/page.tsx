@@ -67,7 +67,7 @@ const clauses: Clause[] = [
   {
     n: 12,
     heading: "Intellectual property.",
-    body: "FORTHASIA HEALTH®, TEKMERIS GLOBAL® and KDTINO® marks and all site content are ours; no reuse without written permission.",
+    body: "The FORTHASIA HEALTH® and KDTINO® marks and all site content are ours; no reuse without written permission. TEKMERIS GLOBAL is an independent third party and its marks belong to it.",
   },
   {
     n: 13,

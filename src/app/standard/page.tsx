@@ -37,7 +37,7 @@ const matchingRules = [
 export const metadata: Metadata = {
   title: "The Forthasia Standard",
   description:
-    "We Don't Refer. We Verify. TEKMERIS GLOBAL is our independent verification engine — on-site facility audits, credential checks, and an immutable record of custody.",
+    "We Don't Refer. We Verify. We engage TEKMERIS GLOBAL, an independent verification partner, for on-site audits of every hospital, healthcare centre, medi-spa and medical-device programme before it reaches your proposal.",
 };
 
 const pillars = [
@@ -49,7 +49,7 @@ const pillars = [
   {
     tag: "TEKMERIS GLOBAL · 02",
     title: "QC/QA standards, applied in person",
-    body: "Every verification is conducted against international QC/QA standards — the same discipline as our supply-chain work: chain-of-custody controls, tamper-evident sealing where product is involved, and blind third-party lab testing. A PDF certificate is not evidence. Eyes on the ground are evidence.",
+    body: "Every verification is conducted against international QC/QA standards, on site and in person — infection control, emergency readiness, equipment currency, and the quality of English-language coordination at the door. A PDF certificate is not evidence. Eyes on the ground are evidence.",
   },
   {
     tag: "TEKMERIS GLOBAL · 03",
@@ -92,10 +92,10 @@ export default function StandardPage() {
           </div>
           <div>
             <p className="font-monument text-xl text-[var(--color-porcelain)]">
-              We don&rsquo;t sell product. We sell certainty.
+              We verify what others take on trust.
             </p>
             <p className="data-tag mt-3 text-[color-mix(in_srgb,var(--color-olympic-gold)_92%,white)]">
-              — TEKMERIS GLOBAL
+              — TEKMERIS GLOBAL, our verification partner
             </p>
           </div>
         </div>
@@ -105,7 +105,7 @@ export default function StandardPage() {
         <SectionHeading
           eyebrow="What TEKMERIS GLOBAL covers"
           title="Five checks, applied the same way every time"
-          lede="TEKMERIS GLOBAL is the Spartan half of the philosophy made operational. The same QC/QA discipline we apply to peptide factories and supply chains is applied here to hospitals and clinics — verified on site, on the ground, in person. Tested until the structure holds under load."
+          lede="TEKMERIS GLOBAL is the Spartan half of the philosophy made operational — the independent partner we engage to verify every hospital, healthcare centre, medi-spa and medical-device programme before it reaches your proposal. Verified on site, on the ground, in person. Tested until the structure holds under load."
         />
         <p className="mt-4 max-w-2xl text-xs leading-relaxed text-[var(--color-bronze)]">
           Verification covers licensing, facility standards, and compliance
@@ -169,8 +169,8 @@ export default function StandardPage() {
           asset={{
             tag: "STOCK",
             brief:
-              "Macro of a numbered tamper-evident security seal, alongside blurred laboratory vials.",
-            alt: "Tamper-evident security seal; laboratory vials",
+              "A hospital accreditation-certificate wall or a clean, empty clinical corridor — institutional, no faces.",
+            alt: "Hospital accreditation certificates on a wall",
             caption: "We don't refer. We verify.",
           }}
         />
@@ -183,10 +183,10 @@ export default function StandardPage() {
             Independence Is The Product
           </p>
           <p className="mt-4 text-[var(--color-porcelain)]">
-            TEKMERIS GLOBAL verifies hospitals, clinics and supply chains the
-            same way: on site, against QC/QA standards, for the client alone.
-            A green verification cannot be purchased — it can only be earned
-            by passing the audit.
+            TEKMERIS GLOBAL verifies every hospital, healthcare centre and
+            clinic the same way: on site, against QC/QA standards, for one
+            client — us. A green verification cannot be purchased; it is
+            earned by passing the audit.
           </p>
         </div>
       </Section>
@@ -208,25 +208,13 @@ export default function StandardPage() {
         <EmailCTA
           className="mt-8"
           email="partners@forthasiahealth.com"
-          body="Are you an overseas buyer requiring independent, on-the-ground QA/QC verification of a Chinese medical facility or supply chain? Engage our audit team."
+          body="Are you a hospital, healthcare centre or medi-spa seeking to join the Forthasia network? Every facility is admitted by independent audit only — no facility pays to be listed, verified, or matched."
         />
       </Section>
 
-      {/* Cross-link — foot of page */}
+      {/* Foot of page */}
       <Section>
-        <div className="flex flex-col items-center gap-6 text-center">
-          <p className="text-[var(--color-ink-soft)]">
-            The same standard verifies the supply chain →{" "}
-            <span
-              aria-disabled="true"
-              className="cursor-not-allowed text-[var(--color-bronze)] underline decoration-dotted underline-offset-4"
-            >
-              Read the TEKMERIS GLOBAL standard
-            </span>{" "}
-            <span className="data-tag text-[var(--color-bronze)]">
-              (link activates when the TEKMERIS GLOBAL site is live)
-            </span>
-          </p>
+        <div className="flex justify-center">
           <CTAButton href="/journey" variant="outline">
             See the 4-phase journey
           </CTAButton>
