@@ -36,7 +36,7 @@ export function SiteFooter() {
               <span className="block font-body text-[1.4rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-porcelain)]">
                 Forthasia
               </span>
-              <span className="mt-1.5 block font-mono text-[0.72rem] uppercase tracking-[0.34em] text-[var(--color-olympic-gold)]">
+              <span className="mt-1.5 block font-mono text-[0.9rem] font-medium uppercase tracking-[0.28em] text-[var(--color-olympic-gold)]">
                 Health
               </span>
             </span>
