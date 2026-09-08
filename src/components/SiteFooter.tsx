@@ -12,6 +12,12 @@ const ENTITY_LINE =
 const COMPLIANCE_BLOCK =
   "FORTHASIA HEALTH is a logistical, translational, and verification facilitator. We do not diagnose, treat, or prescribe.";
 
+/** Anti-impersonation notice. */
+const OFFICIAL_SITE_LINE =
+  "This is the official website of FORTHASIA HEALTH. forthasiahealth.com is our only domain — treat any other site, address, or account claiming to be us as fraudulent.";
+
+const COPYRIGHT_LINE = `Copyright © ${new Date().getFullYear()} Forthasia Health. All Rights Reserved.`;
+
 const legalLinks = [
   { label: "Privacy Policy", href: "/privacy" },
   { label: "Terms & Conditions", href: "/terms" },
@@ -131,14 +137,15 @@ export function SiteFooter() {
         </div>
       </div>
 
-      {/* 4. Entity line (smallest type, verbatim) */}
+      {/* 4. Entity line (smallest type, verbatim) + official-site notice + copyright */}
       <div className="border-t border-[color-mix(in_srgb,var(--color-bronze)_35%,transparent)]">
         <div className="shell flex flex-col gap-4 py-8 md:flex-row md:items-start md:justify-between">
-          <p className="max-w-2xl text-xs leading-relaxed text-[color-mix(in_srgb,var(--color-porcelain)_62%,transparent)]">
-            {ENTITY_LINE}
-          </p>
+          <div className="max-w-2xl space-y-2 text-xs leading-relaxed text-[color-mix(in_srgb,var(--color-porcelain)_62%,transparent)]">
+            <p>{ENTITY_LINE}</p>
+            <p>{OFFICIAL_SITE_LINE}</p>
+          </div>
           <p className="data-tag shrink-0 text-[color-mix(in_srgb,var(--color-porcelain)_45%,transparent)]">
-            © {new Date().getFullYear()} Forthasia Health
+            {COPYRIGHT_LINE}
           </p>
         </div>
       </div>
