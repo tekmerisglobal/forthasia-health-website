@@ -18,3 +18,6 @@ next-env.d.ts
 
 # Design canvas / brand kit — kept local, not shipped with the repo.
 /design-system/
+
+# TypeScript incremental build info
+*.tsbuildinfo

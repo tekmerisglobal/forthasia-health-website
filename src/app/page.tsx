@@ -4,7 +4,6 @@ import { RodOfAsclepius } from "@/components/RodOfAsclepius";
 import {
   CTAButton,
   Diptych,
-  ImageSlot,
   PullQuote,
   Section,
   SectionHeading,
@@ -205,27 +204,8 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Story band — imagery manifest: Home / Story band */}
-      <Section>
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
-          <SectionHeading
-            eyebrow="The Grove"
-            title="Medicine begins in the soil"
-            lede="Half the founder's education came from the East. The other half came from a family olive grove in Ilia, Greece — the source of the high-polyphenol EVOO in The Longevity Plate."
-          />
-          <ImageSlot
-            asset={{
-              tag: "OWN",
-              brief: "Family olive grove, Ilia, Greece — golden hour.",
-              alt: "Family olive grove, Ilia, Greece",
-              caption: "Medicine begins in the soil.",
-            }}
-          />
-        </div>
-      </Section>
-
       {/* Journey teaser */}
-      <Section tone="dim">
+      <Section>
         <SectionHeading
           eyebrow="The 4-Phase Journey"
           title="From a definitive second opinion to a documented home continuum"

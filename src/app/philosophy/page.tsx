@@ -13,33 +13,13 @@ import {
 export const metadata: Metadata = {
   title: "Philosophy",
   description:
-    "The Land That Taught the World to Heal — the Greek lineage of Ilia, Elis, Olympia, Sparta, and Epidaurus, the Eastern integration of 30 years in integrated medicine, and the creed that binds them.",
+    "The Land That Taught the World to Heal — the Greek lineage of Elis, Olympia, Sparta, and Epidaurus, the Eastern integration of 30 years in integrated medicine, and the creed that binds them.",
 };
 
 /** One diptych per stanza — Imagery & Content Manifest, Philosophy. */
 const stanzas = [
   {
     eyebrow: "The Greek Lineage · I",
-    title: "Chavari, and the grove in Ilia",
-    body: "Before there was a company, there was a coastline. Chavari, in Ilia — stone and olive root, a family grove that still yields the high-polyphenol oil we build The Longevity Plate around. Medicine, in this family, began in the soil.",
-    diptych: {
-      ancient: {
-        label: "The grove at Chavari",
-        note: "Stone and olive root, Ilia, Greece.",
-        alt: "Family olive grove and Chavari stone, Ilia, Greece",
-        tag: "OWN" as const,
-      },
-      modern: {
-        label: "Hainan, at the shoreline",
-        note: "The same care for land, twelve time zones east.",
-        alt: "Hainan beach",
-        tag: "OWN" as const,
-      },
-      caption: "Chavari and Hainan — one instinct, two coastlines.",
-    },
-  },
-  {
-    eyebrow: "The Greek Lineage · II",
     title: "Elis, and the Hellanodikai",
     body: "In Ilia stood Ancient Elis, home of the Hellanodikai — the judges who guarded the purity of the Games. They could not be bought. They measured what was, not what was claimed. That instinct — to verify before we celebrate — is the oldest part of our work.",
     diptych: {
@@ -59,7 +39,7 @@ const stanzas = [
     },
   },
   {
-    eyebrow: "The Greek Lineage · III",
+    eyebrow: "The Greek Lineage · II",
     title: "Olympia, the sanctuary of healing",
     body: "Olympia was not only a stadium. It was a sanctuary — a place people travelled to in order to be made well. The journey was part of the cure. We hold the same view: the body is a sacred vessel, and the passage toward care deserves the same seriousness as the care itself.",
     diptych: {
@@ -78,7 +58,7 @@ const stanzas = [
     },
   },
   {
-    eyebrow: "The Greek Lineage · IV",
+    eyebrow: "The Greek Lineage · III",
     title: "Sparta, and the name Forthasia",
     body: "From Sparta comes the upright stance — and the name Forthasia. The Greek root is tekmerion: proof, sure sign, evidence — and it is from tekmerion that our verification engine, TEKMERIS GLOBAL, takes its own. To stand upright is to be verified: tested until the structure holds under load.",
     diptych: {
@@ -97,7 +77,7 @@ const stanzas = [
     },
   },
   {
-    eyebrow: "The Greek Lineage · V",
+    eyebrow: "The Greek Lineage · IV",
     title: "Epidaurus, and the oldest sanctuary",
     body: "Before Olympia crowned athletes, Epidaurus healed the sick. Its sanctuary to Asclepius drew patients from across the ancient world — people who came not for a diagnosis alone, but for rest, ritual, and time. We borrow the instinct, not the ritual: healing takes the time it takes.",
     diptych: {
@@ -118,7 +98,7 @@ const stanzas = [
   {
     eyebrow: "The Eastern Integration",
     title: "Thirty years across Asian health systems",
-    body: "The founder's lineage runs through three decades of integrated medicine: training under WHO initiatives with Prof. Dr. Sir Anton Jayasuriya in Sri Lanka, interning in Chinese hospitals, and studying at Wudang Shan. The East was not a detour. It was half the education.",
+    body: "The founder's lineage runs through three decades of integrated medicine: training under WHO initiatives in Sri Lanka, years inside Chinese hospitals — traditional Chinese medicine learned at the bedside, not from a book — and study at Wudang Shan. Modern China matters just as much: the accredited tertiary hospitals, the regulatory standards, and the infrastructure the country has built are what make the Hainan pilot zone possible today. The East was not a detour. It was half the education.",
     diptych: {
       ancient: {
         label: "Wudang Shan",

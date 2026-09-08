@@ -19,8 +19,8 @@ const registrations = [
   "Registered Chinese-Medicine Practitioner & Naturopath — Australia (AHPRA / ANTA)",
   "30+ years across Asian health systems",
   "Former General Manager, Summit Club — an exclusive Beijing VIP club",
-  "Training under WHO initiatives with Prof. Dr. Sir Anton Jayasuriya (Sri Lanka)",
-  "Hospital internships in China; study at Wudang Shan",
+  "Training under WHO initiatives (Sri Lanka)",
+  "Years inside Chinese hospitals learning traditional Chinese medicine; study at Wudang Shan",
 ];
 
 export default function FounderPage() {
@@ -67,9 +67,9 @@ export default function FounderPage() {
               tone="cool"
               asset={{
                 tag: "OWN",
-                brief: "Olive grove harvest, the family grove in Greece.",
-                alt: "Olive grove harvest",
-                caption: "Every autumn, the medicine is harvested.",
+                brief: "The founder in a Hainan hospital corridor, in conversation with clinicians — candid, no white coat.",
+                alt: "The founder with clinicians in a Hainan hospital",
+                caption: "Thirty years in, still on the ward.",
               }}
               aspect="square"
             />

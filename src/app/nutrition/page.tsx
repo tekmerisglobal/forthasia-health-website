@@ -23,7 +23,7 @@ const offerings = [
   },
   {
     title: "The Longevity Plate",
-    body: "Mediterranean longevity fats — including high-polyphenol extra-virgin olive oil from the founder's family grove in Greece — combined with Eastern herbal tonics and peptide-supportive macronutrient design.",
+    body: "Mediterranean longevity fats combined with Eastern herbal tonics and peptide-supportive macronutrient design — a physician-guided plate, not a diet.",
   },
 ];
 
@@ -39,9 +39,9 @@ export default function NutritionPage() {
       <Section>
         <ImageSlot
           asset={{
-            tag: "OWN/STOCK",
-            brief: "Market kitchen, or an olive-oil pour — warm, unstaged.",
-            alt: "Olive oil poured in a market kitchen",
+            tag: "STOCK",
+            brief: "A market kitchen — fresh produce, warm and unstaged. No faces.",
+            alt: "A market kitchen with fresh produce",
             caption: "Let food be thy medicine.",
           }}
         />

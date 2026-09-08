@@ -18,7 +18,7 @@ npm start        # serve the production build
 | Route | Page |
 | --- | --- |
 | `/` | Home — hero, "Why Forthasia" trust band, regulatory-oasis stats, journey teaser |
-| `/philosophy` | The Greek lineage (Chavari, Elis, Olympia, Sparta, Epidaurus) + Eastern integration, the Creed, Two Oaths |
+| `/philosophy` | The Greek lineage (Elis, Olympia, Sparta, Epidaurus) + Eastern integration, the Creed, Two Oaths |
 | `/standard` | The Forthasia Standard — TEKMERIS GLOBAL verification (5 checks, independence band, cross-link to the sibling TEKMERIS GLOBAL supply-chain site) |
 | `/destinations` | Boao Lecheng, Dental & Oral Health (price table), Anti-Aging & Longevity, TCM & Rehabilitation, the network ecosystem, market facts, secondary pathways (Bangkok, Mumbai) |
 | `/journey` | The 4-Phase Journey |
