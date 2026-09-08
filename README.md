@@ -67,6 +67,33 @@ only, see `RodOfAsclepius.tsx`), no before/after or efficacy imagery.
 
 `/compliance` and `/consultation` are intentionally image-free per the manifest.
 
+### Hero backdrop (`src/components/HeroBackdrop.tsx`)
+
+The porcelain-dim bands (`PageHero`, and `Section tone="dim"` at half strength)
+carry a faint decorative layer — a radial haze plus a brand-coloured line
+composition (distant Hainan coastline + ridge line + a hint of a glass
+facade), radial-masked so it dissolves before the text column.
+
+To swap the line-art for a real photo on a given page: pass `image` to
+`PageHero` — e.g. `<PageHero … image="/hero/hainan-coast.webp" />`. It renders
+at ~16% opacity behind a porcelain scrim (no code change needed, just drop the
+file in `public/hero/`). Good candidates, all findable as CC0 / public-domain
+stock (Unsplash, Wikimedia Commons, Pexels):
+
+| Page | Suggested photo |
+| --- | --- |
+| `/` hero (dark) | Hainan coastline at golden hour — slow drone/wide, low horizon |
+| `/philosophy` | Greek mountain light, or a calm sea horizon |
+| `/standard` | Clean modern hospital corridor / atrium, no people |
+| `/destinations` | Boao Lecheng / Hainan modern medical architecture, glass + palms |
+| `/journey` | Aircraft window over tropical coast |
+| `/recovery` | Sanya bay, rainforest canopy (Jianfengling), or hot-spring steam |
+| `/nutrition` | Overhead market produce / olive-free Mediterranean table |
+| `/founder` | Hainan beach, soft |
+| `/visa-guide` | (keep institutional — line-art only) |
+
+Rules unchanged: no faces/white coats, no caduceus, no before/after.
+
 ## Known TODOs before launch
 
 - **Visa country list** (`src/data/visa.ts`) ships indicative, with the

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { HeroBackdrop } from "./HeroBackdrop";
 
 /* ============================================================
    Shared presentational primitives.
@@ -23,8 +24,12 @@ export function Section({
     ionian: "bg-[var(--color-ionian)] text-[var(--color-porcelain)]",
   };
   return (
-    <section id={id} className={`${tones[tone]} py-16 md:py-[5.5rem] ${className}`}>
-      <div className="shell">{children}</div>
+    <section
+      id={id}
+      className={`relative overflow-hidden ${tones[tone]} py-16 md:py-[5.5rem] ${className}`}
+    >
+      {tone === "dim" ? <HeroBackdrop variant="band" /> : null}
+      <div className="shell relative">{children}</div>
     </section>
   );
 }
@@ -38,18 +43,18 @@ export function PageHero({
   title,
   lede,
   children,
+  image,
 }: {
   eyebrow: string;
   title: ReactNode;
   lede?: ReactNode;
   children?: ReactNode;
+  /** Optional /public path to a photo, rendered low-opacity behind a scrim. */
+  image?: string;
 }) {
   return (
     <section className="relative overflow-hidden border-b border-[color-mix(in_srgb,var(--color-bronze)_22%,transparent)] bg-[var(--color-porcelain-dim)] py-16 md:py-[5.5rem]">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.5] [background:radial-gradient(60%_60%_at_80%_-10%,color-mix(in_srgb,var(--color-olympic-gold)_28%,transparent),transparent_70%),radial-gradient(50%_50%_at_-10%_110%,color-mix(in_srgb,var(--color-ionian)_20%,transparent),transparent_70%)]"
-      />
+      <HeroBackdrop image={image} />
       <div className="shell relative">
         <Eyebrow>{eyebrow}</Eyebrow>
         <h1 className="font-monument text-h1 mt-5 max-w-4xl text-balance text-[var(--color-ink-umber)]">
