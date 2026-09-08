@@ -20,17 +20,17 @@ const routing = [
   {
     title: "VIP Medical Concierge & Patient Routing",
     email: "concierge@forthasiahealth.com",
-    body: "For international patients seeking access to Hainan's Boao Lecheng zone, oncology routing, and executive health screenings.",
+    body: "For international patients: access to Hainan's Boao Lecheng zone, mainland surgical and oncology routing, and dental pathways.",
   },
   {
-    title: "Longevity, Anti-Aging & DNA Nutrition",
+    title: "Longevity, Wellness & DNA Nutrition",
     email: "longevity@forthasiahealth.com",
-    body: "For inquiries regarding neurogenomic eating plans, regenerative protocols, and zone-legal longevity therapies.",
+    body: "For anti-aging protocols, medi-spa, wellness retreats, executive health screens, and DNA-guided nutrition.",
   },
   {
-    title: "B2B Hospital & Overseas Clinic Partnerships",
+    title: "B2B Hospital, Clinic & Resort Partnerships",
     email: "partners@forthasiahealth.com",
-    body: "For international clinics, medical tourism agencies, and hospital directors seeking to establish referral pipelines or QA/QC verification.",
+    body: "For hospitals, clinics, wellness resorts and medical-tourism agencies — MOUs, referral pipelines, and TEKMERIS GLOBAL verification.",
   },
   {
     title: "Secure Document Submission (Retained Clients Only)",

@@ -79,7 +79,7 @@ export function SiteFooter() {
               </a>
             </li>
             <li>
-              For B2B Hospital & Clinic Partnerships:{" "}
+              For B2B Hospital, Clinic & Resort Partnerships:{" "}
               <a
                 href="mailto:partners@forthasiahealth.com"
                 className="transition-colors hover:text-[var(--color-olympic-gold)]"
