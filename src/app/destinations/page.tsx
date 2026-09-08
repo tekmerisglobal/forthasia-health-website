@@ -22,15 +22,27 @@ export const metadata: Metadata = {
 const boaoPoints = [
   {
     title: "The ~40-hour drug-access framework",
-    body: "The 'Super AI Hospital' and the real-world-data (RWD) pathway allow access to FDA / EMA-approved life-saving therapies years before they are available in mainland China or the West.",
+    body: "An AI system scans FDA and EMA approvals daily. A therapy cleared overseas can be approved for use inside the zone in around 40 hours — against roughly 60 days through the national route — with customs clearance for a patient's application in three to seven days.",
+  },
+  {
+    title: "570+ therapies, first in China",
+    body: "More than 570 innovative medicines and devices — approved abroad but not yet on the mainland market — have entered China first through Lecheng, across oncology, rare disease, ophthalmology and more.",
+  },
+  {
+    title: "Real-world data as a bridge",
+    body: "Lecheng is China's designated testing ground where real-world clinical data gathered on an imported product can support that product's full national registration. Treatment here also contributes to the evidence base.",
   },
   {
     title: "Advanced hardware",
-    body: "Boron Neutron Capture Therapy (BNCT) for recurrent head and neck cancers; advanced stem-cell and gene therapies — for example Zolgensma and Enhertu — at a fraction of Western costs.",
+    body: "Boron Neutron Capture Therapy for recurrent head-and-neck cancers at Pengbo (Hainan) Boron Neutron Hospital — its NeuCure system reached first beam extraction in November 2025. A proton-therapy centre is approved at Boao Evergrande International Hospital. Advanced stem-cell and gene therapies are available at a fraction of Western cost.",
   },
   {
-    title: "Grade A tertiary care",
-    body: "Mayo Clinic and MD Anderson affiliations; hospitality-infused healthcare with dedicated service officers assigned to each patient.",
+    title: "The Super AI Hospital model",
+    body: "Diagnosis near home, concentrated treatment in Lecheng, and follow-up back in your own region — the zone's three-stage framework, built around the international patient rather than the building.",
+  },
+  {
+    title: "A regulatory sandbox by design",
+    body: "A 20 km² zone in Qionghai, Hainan, established in 2013 and folded into the Hainan Free Trade Port. It runs on four special licences — medical practice, research, business operation and international exchange — with zero tariff on imported medicines since 2024.",
   },
 ];
 
@@ -70,13 +82,15 @@ export default function DestinationsPage() {
         <SectionHeading
           eyebrow="Why Boao Lecheng"
           title="What the pilot zone makes possible"
+          lede="Boao Lecheng is China's designated 'medical special zone' — a regulatory sandbox inside the Hainan Free Trade Port where overseas-approved therapies reach patients years earlier than they would through the standard national route. We coordinate access to it; the treating hospital delivers the care."
         />
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          <StatCard value="~40 hrs" label="Drug-access framework via the Super AI Hospital / RWD pathway" />
-          <StatCard value="BNCT" label="Boron Neutron Capture Therapy — recurrent head & neck cancers" />
-          <StatCard value="Grade A" label="Tertiary care with Mayo Clinic and MD Anderson affiliations" />
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <StatCard value="~40 hrs" label="To approve an overseas-cleared therapy for use in the zone (vs ~60 days nationally)" />
+          <StatCard value="570+" label="Innovative medicines & devices brought into China first through Lecheng" />
+          <StatCard value="~36" label="Medical institutions operating within the zone" />
+          <StatCard value="20 km²" label="The pilot zone, in Qionghai, Hainan — a regulatory sandbox since 2013" />
         </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {boaoPoints.map((p) => (
             <Reveal key={p.title}>
               <div className="h-full rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] px-[22px] py-6">
@@ -90,6 +104,27 @@ export default function DestinationsPage() {
             </Reveal>
           ))}
         </div>
+        <div className="mt-10">
+          <FactsBand
+            label="Illustrative public data — zone-published; figures move, confirm at consultation"
+            facts={[
+              "20 km² zone in Qionghai; established 2013, now part of the Hainan Free Trade Port",
+              "~36 medical institutions operating · ~60 foreign-funded enterprises",
+              "570+ overseas-approved medicines and devices used first-in-China here",
+              "~40-hour approval pathway vs ~60 days nationally; customs clearance in 3–7 days",
+              "Zero tariff on imported medicines since 2024 — reported patient savings ~68M CNY",
+              "413,700 medical-tourism visits in 2024 (+36.8%); ~865,000 in 2025",
+              "Real-world data from the zone can support a product's full China registration",
+              "Research links with 180+ pharmaceutical and med-tech companies across 20 countries",
+            ]}
+          />
+        </div>
+        <p className="data-tag mt-6 text-[var(--color-bronze)]">
+          We describe access to advanced therapies and the outcome of a viability
+          assessment. We do not diagnose, treat, prescribe, or guarantee a
+          clinical outcome. Named institutions are public facilities; the
+          FORTHASIA NETWORK badge applies only after independent audit.
+        </p>
       </Section>
 
       <Section tone="dim">
@@ -303,11 +338,13 @@ export default function DestinationsPage() {
         />
         <ul className="mt-8 grid gap-3 sm:grid-cols-2">
           {[
-            "Boao Lecheng Pilot Zone — 35+ international medical routes",
-            "Super AI Hospital (2026) · Research Hospital (2026)",
+            "Boao Lecheng Pilot Zone — 35+ international medical-tourism routes",
+            "Boao Super Digital Intelligence ('AI') Hospital — the three-stage model",
+            "Pengbo (Hainan) Boron Neutron Hospital — BNCT; first beam extraction Nov 2025",
+            "Boao Evergrande International Hospital — proton-therapy centre (approved)",
             "Yiling Life Care Center",
             "LECZCORE / Mellsser — oncology & longevity",
-            "Sanya TCM Hospital",
+            "Sanya Hospital of TCM — National TCM Service Export Base",
             "Hainan International Travel Health Care Center — sole authorized issuer of the International Travel Health Examination Certificate",
             "International Medical Center, Hainan Medical University 2nd Affiliated",
             "Sanya Central Hospital International Medical Clinic (2025)",
@@ -334,7 +371,8 @@ export default function DestinationsPage() {
             "86-country visa-free entry with medical purpose written into law (1 Dec 2025)",
             "Check-ups: 500–30,000 CNY",
             "Advanced therapies zone-published from 16,000 CNY (3rd batch, Sept 2025)",
-            "Zone partners with international insurers (AXA, HSBC)",
+            "Zone-linked special-medicine insurance: ~49 CNY premium, cover up to ~2M CNY",
+            "Zone works with international insurers (e.g. AXA, HSBC)",
             "Average international patient spend: >12,000 CNY",
           ]}
         />
