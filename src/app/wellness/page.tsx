@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import { Callout, PageHero, Section, SectionHeading } from "@/components/ui";
 
@@ -59,6 +60,31 @@ export default function WellnessPage() {
         </p>
       </Section>
 
+      <Section>
+        <SectionHeading
+          eyebrow="Go deeper"
+          title="A page for each movement"
+        />
+        <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+          {[
+            ["Longevity & anti-aging protocols", "/wellness/longevity"],
+            ["Physician-led medi-spa & aesthetics", "/wellness/medi-spa"],
+            ["Health retreats & tropical recovery", "/wellness/retreats"],
+            ["Executive health screening", "/treatments/executive-screening"],
+          ].map(([label, href]) => (
+            <li key={href}>
+              <Link
+                href={href}
+                className="flex items-center justify-between gap-3 rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] px-[22px] py-4 copy-sm text-[var(--color-ink-soft)] transition-colors hover:border-[var(--color-olympic-gold)] hover:text-[var(--color-ionian)]"
+              >
+                {label}
+                <span aria-hidden className="text-[var(--color-olympic-gold)]">→</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
       {/* Partner band */}
       <Section tone="dim">
         <Callout tone="ionian" title="How facilities enter the network">
@@ -82,12 +108,12 @@ export default function WellnessPage() {
           >
             Begin a Wellness Consultation
           </a>
-          <a
-            href="mailto:partners@forthasiahealth.com"
+          <Link
+            href="/partners"
             className="btn-label inline-flex h-11 items-center justify-center whitespace-nowrap rounded-full border border-[var(--color-bronze)] px-6 text-[var(--color-ink-umber)] transition-colors hover:border-[var(--color-olympic-gold)] hover:text-[var(--color-ionian)]"
           >
             Partner With Us
-          </a>
+          </Link>
         </div>
 
         <p className="mt-8 max-w-3xl text-xs leading-relaxed text-[var(--color-bronze)]">

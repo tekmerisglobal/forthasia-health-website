@@ -22,6 +22,7 @@ const legalLinks = [
   { label: "Privacy Policy", href: "/privacy" },
   { label: "Terms & Conditions", href: "/terms" },
   { label: "Compliance & Ethics (HIIC)", href: "/compliance" },
+  { label: "Peptide Therapy — Legal Notice", href: "/peptides/legal" },
 ];
 
 export function SiteFooter() {
@@ -51,7 +52,12 @@ export function SiteFooter() {
             The Site
           </h2>
           <ul className="mt-4 space-y-2 copy-sm">
-            {primaryNav.map((item) => (
+            {[
+              ...primaryNav,
+              { label: "Treatments", href: "/treatments" },
+              { label: "Peptides", href: "/peptides" },
+              { label: "Partners", href: "/partners" },
+            ].map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
@@ -86,6 +92,13 @@ export function SiteFooter() {
               >
                 partners@forthasiahealth.com
               </a>
+              {" — "}
+              <Link
+                href="/partners"
+                className="underline decoration-[var(--color-bronze)] underline-offset-4 transition-colors hover:text-[var(--color-olympic-gold)]"
+              >
+                how affiliation works
+              </Link>
             </li>
           </ul>
 

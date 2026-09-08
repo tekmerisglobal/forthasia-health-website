@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import { RodOfAsclepius } from "@/components/RodOfAsclepius";
+import { JsonLd } from "@/components/seo/JsonLd";
 import {
   CTAButton,
   Diptych,
@@ -9,6 +10,57 @@ import {
   SectionHeading,
   StatCard,
 } from "@/components/ui";
+import { CONCIERGE_EMAIL, ORG_NAME, SITE_URL } from "@/lib/site";
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: ORG_NAME,
+  url: SITE_URL,
+  email: CONCIERGE_EMAIL,
+  description:
+    "Independent medical facilitation, longevity and wellness coordination across Asia. A facilitator — not a medical provider.",
+  areaServed: "Worldwide",
+  knowsAbout: [
+    "Medical tourism",
+    "Boao Lecheng International Medical Tourism Pilot Zone",
+    "Longevity medicine",
+    "Hospital verification",
+  ],
+};
+
+const divisions = [
+  [
+    "Medical Journeys",
+    "Oncology, orthopaedics, cardiac and dental care — matched to a verified hospital and routed through Hainan or mainland China.",
+    "/treatments",
+  ],
+  [
+    "Longevity & Executive Screening",
+    "Biomarker panels, advanced imaging and executive health screens, read by physicians before any protocol begins.",
+    "/wellness/longevity",
+  ],
+  [
+    "Regenerative & Peptide Therapy",
+    "Selected regenerative and peptide treatments, accessed only through a licensed institution inside Hainan's Boao Lecheng zone, under a doctor's supervision.",
+    "/treatments/regenerative",
+  ],
+  [
+    "Medi-Spa, Retreats & Recovery",
+    "Physician-led aesthetic medicine, tropical recovery and structured post-procedure retreats across Asia.",
+    "/wellness/medi-spa",
+  ],
+  [
+    "Nutrition & The Longevity Plate",
+    "DNA-guided, physician-designed nutrition for recovery and prevention.",
+    "/nutrition",
+  ],
+  [
+    "Integrative, TCM & Care at Home",
+    "Traditional Chinese medicine, rehabilitation, and a documented home continuum after you fly back.",
+    "/treatments/tcm",
+  ],
+];
 
 const actionBlocks = [
   {
@@ -32,6 +84,7 @@ const actionBlocks = [
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={organizationSchema} />
       {/* Hero — min-height 78vh / max-height 760px per V-7 density spec */}
       <section className="relative flex min-h-[78vh] max-h-[760px] items-end overflow-hidden">
         <div
@@ -95,6 +148,49 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Stewards of Health — positioning band + service divisions */}
+      <Section>
+        <SectionHeading
+          eyebrow="Stewards of Health"
+          title="More than medical tourism."
+          lede="A knee replaced in Haikou. A physician-supervised peptide therapy inside Boao Lecheng — the one zone in China where selected treatments not yet approved nationally are lawfully available. A dental arch rebuilt in Shanghai. A longevity protocol in Phuket. A recovery on a Hainan beach. FORTHASIA HEALTH verifies, facilitates and accompanies every step — because health is not one appointment. It is a continuum we steward."
+        />
+        <ul className="mt-10 grid list-none gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {divisions.map(([t, d, href], i) => (
+            <Reveal as="li" key={t}>
+              <Link
+                href={href}
+                className="flex h-full flex-col rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] px-[22px] py-6 transition-colors hover:border-[var(--color-olympic-gold)]"
+              >
+                <span className="data-tag text-[var(--color-olympic-gold)]">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="font-card-title mt-2 text-[var(--color-ink-umber)]">
+                  {t}
+                </p>
+                <p className="mt-2 copy-sm text-[var(--color-ink-soft)]">{d}</p>
+                <span aria-hidden className="mt-4 text-[var(--color-olympic-gold)]">
+                  →
+                </span>
+              </Link>
+            </Reveal>
+          ))}
+        </ul>
+        <p className="mt-6 max-w-3xl text-xs leading-relaxed text-[var(--color-bronze)]">
+          FORTHASIA HEALTH does not diagnose, treat or prescribe. Regenerative
+          and peptide therapies are prescribed and administered solely by
+          licensed physicians inside a regulated medical institution; in China,
+          certain non-NMPA-approved treatments are lawfully available only within
+          the Boao Lecheng pilot zone. Destinations beyond Hainan and Bangkok are
+          partner-network-in-build.
+        </p>
+        <div className="mt-8">
+          <CTAButton href="/partners" variant="ghost">
+            Facilities &amp; clinicians: how affiliation works →
+          </CTAButton>
+        </div>
+      </Section>
 
       {/* Ethos strip */}
       <Section tone="dim">

@@ -210,6 +210,16 @@ export default function StandardPage() {
           email="partners@forthasiahealth.com"
           body="Are you a hospital, healthcare centre or medi-spa seeking to join the Forthasia network? Every facility is admitted by independent audit only — no facility pays to be listed, verified, or matched."
         />
+        <p className="mt-6 copy-sm text-[var(--color-ink-soft)]">
+          What affiliation involves, category by category, is set out on{" "}
+          <Link
+            href="/partners"
+            className="text-[var(--color-ionian)] underline decoration-[var(--color-olympic-gold)] decoration-2 underline-offset-4 hover:text-[var(--color-ink-umber)]"
+          >
+            Affiliations &amp; Partners
+          </Link>
+          .
+        </p>
       </Section>
 
       {/* Foot of page */}

@@ -3,6 +3,7 @@ import { Inter_Tight, Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { SITE_URL } from "@/lib/site";
 
 const interTight = Inter_Tight({
   subsets: ["latin"],
@@ -34,21 +35,25 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://forthasiahealth.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Forthasia Health — The Global Standard in Medical Stewardship",
+    default: "Forthasia Health — Stewards of Health Across Asia",
     template: "%s — Forthasia Health",
   },
   description:
-    "Forthasia Health navigates the intersection of advanced regenerative medicine, diagnostic confirmation, and longevity. Headquartered in Hainan, China. We advise, translate, and verify — we do not diagnose, treat, or prescribe.",
+    "Independent medical facilitation, longevity, wellness and recovery across Asia. Verified hospitals, physician-supervised protocols, visa-free Hainan access. We facilitate, translate and verify — we do not diagnose, treat, or prescribe.",
   openGraph: {
-    title: "Forthasia Health — The Global Standard in Medical Stewardship",
+    title: "Forthasia Health — Stewards of Health Across Asia",
     description:
-      "Advanced regenerative medicine, diagnostic confirmation, and longevity — stewarded from the Hainan Boao Lecheng regulatory oasis.",
+      "Independent medical facilitation, longevity and wellness coordination across Asia — routed through the Hainan Boao Lecheng regulatory zone.",
     type: "website",
     locale: "en",
+    siteName: "Forthasia Health",
   },
   robots: { index: true, follow: true },
+  verification: process.env.NEXT_PUBLIC_GSC_TOKEN
+    ? { google: process.env.NEXT_PUBLIC_GSC_TOKEN }
+    : undefined,
 };
 
 export default function RootLayout({

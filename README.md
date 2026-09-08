@@ -29,6 +29,14 @@ npm start        # serve the production build
 | `/compliance` | Compliance & ethics boundaries (text-only, deliberately) |
 | `/founder` | Konstantino "Tino" Dimitropoulos |
 | `/consultation` | Contact / intake form → `POST /api/intake` |
+| `/partners` | Affiliations & Partners — "Stewards of Health, together." network scope, verification-not-payment terms, `partners@` apply CTA |
+| `/treatments` | Treatments hub — links the six spoke pages |
+| `/treatments/[slug]` | SEO spokes: `oncology`, `orthopaedics`, `dental`, `regenerative`, `executive-screening`, `tcm` (`src/content/treatments.ts`) |
+| `/wellness/[slug]` | SEO spokes: `longevity`, `medi-spa`, `retreats` (`src/content/wellness.ts`) |
+| `/destinations/[slug]` | SEO spokes: `hainan`, `mainland-china`, `thailand`, `india` (`src/content/destinations.ts`) |
+| `/peptides` | Peptide therapy in China — education + facilitation, never commerce |
+| `/peptides/legal` | Regulatory-position reference / legal notice — **noindex**, not in the sitemap, reached only from the footer + `/peptides` |
+| `/llms.txt` | Plain-text AI-search index (`app/llms.txt/route.ts`) |
 | `/privacy` | Privacy Policy (14 clauses) — effective 4 September 2026 |
 | `/terms` | Terms & Conditions (15 clauses) — effective 4 September 2026 |
 
@@ -130,6 +138,45 @@ number. Additional guardrails applied to all Addendum copy:
   so Next.js never routes it, and gitignored. Do not move it in.
 - Every new page still carries the entity line + compliance footer (it's
   global, from `SiteFooter.tsx` — nothing page-specific to remember here).
+
+- "Stewards of Health" positioning rewrite: Home gains a "More than medical
+  tourism." band + a six-card service-divisions grid (Medical Journeys ·
+  Longevity & Executive Screening · Regenerative & Peptide Therapy · Medi-Spa,
+  Retreats & Recovery · Nutrition & The Longevity Plate · Integrative, TCM &
+  Care at Home), and a new `/partners` page. Peptide/regenerative therapy is
+  referenced only as a Boao-Lecheng-zone pathway delivered by licensed
+  institutions under physician supervision — never as something Forthasia
+  administers, and with no link to the separate TEKMERIS GLOBAL business. No
+  olive-oil content (that's the separate Havarion Gold project).
+
+## SEO / AI-search spine
+
+Hub-and-spoke: one search intent per spoke page, the query phrasing repeated
+in the H1, the 40–60-word answer-first paragraph (`answerFirst`, which AI
+engines quote), and the FAQ. Content lives as `PageEntry[]` data in
+`src/content/{treatments,wellness,destinations}.ts` (`PageEntry` type in
+`src/content/types.ts`); `src/components/seo/SpokePage.tsx` renders every spoke
+from that data plus `BreadcrumbList` + `MedicalWebPage` JSON-LD, and
+`FaqBlock.tsx` emits the `FAQPage` schema alongside the visible accordion.
+`JsonLd.tsx` is the escaped `<script type="application/ld+json">` helper;
+the homepage carries `Organization` JSON-LD.
+
+- `src/lib/site.ts` — `SITE_URL` (from `NEXT_PUBLIC_SITE_URL`), org constants,
+  and the verbatim `FACILITATOR_DISCLAIMER` repeated at the foot of every spoke.
+- `app/robots.ts` explicitly allows the AI crawlers (OAI-SearchBot,
+  ChatGPT-User, PerplexityBot, Google-Extended, ClaudeBot, Applebot-Extended,
+  Baiduspider) and points at the sitemap.
+- `app/llms.txt/route.ts` — cite-ready page list + facts, force-static.
+- `app/sitemap.ts` includes every spoke; `/peptides/legal` is deliberately
+  excluded and `noindex` (it's a reference/disclaimer page).
+- Not nav-linked: the spokes surface through the `/treatments` hub, the
+  `/destinations` and `/wellness` hub "go deeper" sections, the homepage
+  divisions grid, hub-and-spoke `related` links, breadcrumbs and the footer.
+- Post-deploy: submit `sitemap.xml` to Google Search Console + Bing Webmaster
+  (Bing feeds ChatGPT search) + Baidu; add a `NEXT_PUBLIC_GSC_TOKEN` env var to
+  emit the Search Console verification tag. E-E-A-T: add "Medically reviewed by"
+  to the treatment/peptide pages once a named medical director's bio + consent
+  land — the single biggest AI-search trust lever for YMYL health content.
 
 ## Not in this phase
 

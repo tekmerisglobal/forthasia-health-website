@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import {
   Callout,
@@ -427,6 +428,33 @@ export default function DestinationsPage() {
           One country, two pathways: visa-free speed in Hainan, unmatched case
           volume on the mainland. We facilitate both.
         </Callout>
+      </Section>
+
+      <Section>
+        <SectionHeading
+          eyebrow="By destination"
+          title="A deeper page for each pathway"
+          lede="Country-by-country detail — regulation, strengths, and where each fits a journey."
+        />
+        <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+          {[
+            ["Hainan — Boao Lecheng, Haikou & Sanya", "/destinations/hainan"],
+            ["Mainland China — Beijing, Shanghai, Guangzhou, Chengdu", "/destinations/mainland-china"],
+            ["Thailand — Bangkok & Phuket", "/destinations/thailand"],
+            ["India — accredited tertiary hospitals", "/destinations/india"],
+            ["Treatments we facilitate", "/treatments"],
+          ].map(([label, href]) => (
+            <li key={href}>
+              <Link
+                href={href}
+                className="flex items-center justify-between gap-3 rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] px-[22px] py-4 copy-sm text-[var(--color-ink-soft)] transition-colors hover:border-[var(--color-olympic-gold)] hover:text-[var(--color-ionian)]"
+              >
+                {label}
+                <span aria-hidden className="text-[var(--color-olympic-gold)]">→</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </Section>
 
       <Section tone="dim">
