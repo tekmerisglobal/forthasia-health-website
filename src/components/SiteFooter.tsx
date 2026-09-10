@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { portalUrl, primaryNav } from "@/lib/nav";
-import { RodOfAsclepius } from "./RodOfAsclepius";
+import { Wordmark } from "./Wordmark";
 
 /**
  * Blueprint §6 — the Entity Line MUST render in the footer of every public page.
@@ -28,25 +28,18 @@ const legalLinks = [
 export function SiteFooter() {
   return (
     <footer className="mt-24 bg-[var(--color-ink-umber)] text-[var(--color-porcelain)]">
-      {/* 1. Logo + nav + Secure Inquiries / Corporate HQ / Client Portal (V-11) */}
-      <div className="shell grid gap-12 py-16 md:grid-cols-[1.2fr_1fr_1fr]">
-        <div>
-          <div className="flex items-center gap-3.5">
-            <RodOfAsclepius className="h-11 w-11 text-[var(--color-olympic-gold)]" />
-            <span className="leading-none">
-              <span className="block font-body text-[1.4rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-porcelain)]">
-                Forthasia
-              </span>
-              <span className="mt-1.5 block font-mono text-[0.9rem] font-medium uppercase tracking-[0.28em] text-[var(--color-olympic-gold)]">
-                Health
-              </span>
-            </span>
-          </div>
-          <p className="data-tag mt-6 text-[color-mix(in_srgb,var(--color-bronze)_90%,white)]">
-            FORTHASIA HEALTH // FROM THE LAND OF OLYMPIA. FORTH TO HEALTH.
-          </p>
-        </div>
+      {/* 0. The centred lockup — generous space above and below, per the
+         brand rollout. No device beside it. */}
+      <div className="shell flex flex-col items-center gap-7 py-20 text-center">
+        <Wordmark align="center" onDark size="1.6rem" />
+        <p className="data-tag text-[color-mix(in_srgb,var(--color-bronze)_90%,white)]">
+          FORTHASIA HEALTH // FROM THE LAND OF OLYMPIA. FORTH TO HEALTH.
+        </p>
+      </div>
 
+      {/* 1. Nav + Secure Inquiries / Corporate HQ / Client Portal (V-11) */}
+      <div className="border-t border-[color-mix(in_srgb,var(--color-bronze)_35%,transparent)]">
+       <div className="shell grid gap-12 py-16 md:grid-cols-2">
         <nav aria-label="Footer — pages">
           <h2 className="eyebrow text-[color-mix(in_srgb,var(--color-bronze)_90%,white)]">
             The Site
@@ -118,6 +111,7 @@ export function SiteFooter() {
             Access Secure Client Portal
           </a>
         </div>
+      </div>
       </div>
 
       {/* 2. Compliance block (verbatim, as locked) */}

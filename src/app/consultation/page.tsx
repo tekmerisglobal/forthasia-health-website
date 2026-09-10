@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { IntakeForm } from "@/components/IntakeForm";
-import { RodOfAsclepius } from "@/components/RodOfAsclepius";
 import { Callout, PageHero, Section, SectionHeading } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -64,12 +63,7 @@ export default function ConsultationPage() {
 
           <aside className="space-y-6">
             <div className="rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain-dim)] p-6">
-              <div className="flex items-center gap-3">
-                <RodOfAsclepius className="h-8 w-8 text-[var(--color-olympic-gold)]" />
-                <p className="font-card-title text-[var(--color-ink-umber)]">
-                  What happens after this
-                </p>
-              </div>
+              <p className="eyebrow">What happens after this</p>
               <ol className="mt-5 space-y-4">
                 {steps.map(([t, d], i) => (
                   <li key={t} className="flex gap-3">

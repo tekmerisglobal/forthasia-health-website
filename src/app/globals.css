@@ -3,29 +3,48 @@
 /* ============================================================
    FORTHASIA HEALTH — Brand System
    Palette, typography scale, and global UX primitives.
+
+   Brand identity locked 2026-09-10 (private-bank/Aman register —
+   restrained, institutional; wordmark only, no pictorial symbol
+   beside it; a single aged-bronze accent; no blue, no green).
    ============================================================ */
 
 @theme {
-  /* Palette (Blueprint §1.1) */
-  --color-porcelain: #faf7f2; /* Light base — main backgrounds */
-  --color-ink-umber: #171310; /* Dark sections — footer, portal, high-contrast text */
-  --color-olympic-gold: #c2a15c; /* Primary accent — CTAs, dividers, active states */
-  --color-olive: #6e8b74; /* Verified / success — TEKMERIS badges */
-  --color-terracotta: #c4644a; /* Alert / conditional — visa warnings, compliance */
-  --color-ionian: #1f3a5f; /* Secondary accent — links, secondary headers */
-  --color-bronze: #8c6d2f; /* Discipline — subtle borders, metadata, footer text */
+  /* ---- The palette. These nine values are the only approved colours
+     on the site — nothing else gets introduced. ---- */
+  --basalt: #12181a;       /* primary ground, near-black */
+  --basalt-2: #1b2325;     /* raised surfaces on dark */
+  --pentelic: #e9e6dc;     /* light ground — the marble the Parthenon is cut from */
+  --pentelic-2: #f4f2ec;   /* lightest surface */
+  --bronze: #a98d5f;       /* THE single accent — aged, not shiny */
+  --bronze-lift: #c4a876;  /* bronze on dark grounds, for contrast */
+  --aegean: #1f3a3d;       /* secondary depth — panels and dividers only, used sparingly */
+  --text-2: #565c58;
+  --text-3: #868b84;
 
-  --color-porcelain-dim: #f0ebe1;
-  --color-ink-soft: #2a2320;
-  --color-parchment: #e9e2d8; /* body copy on umber/dark sections */
-  --color-hairline-dark: rgb(233 226 216 / 0.14); /* card borders on dark */
+  /* ---- Legacy semantic aliases. Every component below still reads
+     these --color-* names; they now resolve only to the palette
+     above, so a single edit here re-themes the whole site. ---- */
+  --color-porcelain: var(--pentelic-2);   /* main light backgrounds */
+  --color-porcelain-dim: var(--pentelic); /* dim / secondary sections */
+  --color-ink-umber: var(--basalt);       /* dark sections, high-contrast text */
+  --color-ink-soft: var(--text-2);        /* body copy on light */
+  --color-bronze: var(--bronze);          /* the accent — borders, metadata, labels */
+  --color-olympic-gold: var(--bronze-lift); /* the accent, lifted for dark grounds */
+  --color-ionian: var(--bronze);          /* was blue — links / emphasis now use bronze */
+  --color-olive: var(--aegean);           /* was green — verified/success now uses aegean */
+  --color-terracotta: var(--basalt);      /* was red/orange — alert now reads as basalt, no hue */
+  --color-parchment: var(--pentelic);     /* copy on umber/dark sections */
+  --color-hairline-dark: rgb(233 230 220 / 0.14); /* card borders on dark, from pentelic */
+  --color-basalt-2: var(--basalt-2);
+  --color-aegean: var(--aegean);
+  --color-text-3: var(--text-3);
 
-  /* Typography — V-7 correction: Inter Tight skeleton, Fraunces retired
-     to Philosophy pull-quotes only, Cinzel retired site-wide. */
-  --font-heading: var(--font-inter-tight), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-editorial: var(--font-fraunces), ui-serif, Georgia, serif;
-  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
+  /* Typography — Marcellus (display/headings, inscriptional capitals) +
+     Karla (body, and Karla 600 for labels/small caps). No monospace. */
+  --font-heading: "Marcellus", ui-serif, Georgia, serif;
+  --font-editorial: "Marcellus", ui-serif, Georgia, serif;
+  --font-body: "Karla", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
@@ -38,8 +57,8 @@
      Every heading, subheading, label and body size on the site
      resolves to one of these. Do not introduce ad-hoc font sizes
      in components; add a step here instead.
-     Base: Inter Tight (headings) · Inter (body) · JetBrains Mono
-     (eyebrows / tags / buttons) · Fraunces italic (Philosophy quotes).
+     Base: Marcellus (headings) · Karla (body, and Karla 600 for
+     eyebrows / tags / buttons / labels).
      ============================================================ */
   --fs-hero: clamp(3rem, 6vw, 4.5rem);       /* 48 → 72px  home hero H1 */
   --fs-h1: clamp(2.5rem, 4.8vw, 3.5rem);     /* 40 → 56px  page-hero H1 */
@@ -50,12 +69,19 @@
   --fs-body: 1.0625rem;                       /* 17px       body copy */
   --fs-body-sm: 0.9375rem;                    /* 15px       dense secondary text, table cells */
   --fs-eyebrow: 0.875rem;                     /* 14px       section eyebrows / kickers */
-  --fs-label: 0.8125rem;                      /* 13px       mono tags, button labels, meta */
+  --fs-label: 0.8125rem;                      /* 13px       tags, button labels, meta */
   --fs-fine: 0.75rem;                         /* 12px       legal fine print only */
 }
 
-* {
-  border-color: color-mix(in srgb, var(--color-bronze) 22%, transparent);
+/* Default border colour (bronze), in the base layer so any utility class —
+   border-[var(--color-X)] included — still wins the cascade over it. Fixed
+   2026-09-10: this rule used to sit unlayered, which beat every utility's
+   explicit border colour regardless of specificity and silently flattened
+   aegean/basalt Callout borders to bronze. */
+@layer base {
+  * {
+    border-color: color-mix(in srgb, var(--color-bronze) 22%, transparent);
+  }
 }
 
 html {
@@ -88,37 +114,37 @@ body {
 
 /* --- Typographic primitives — all sizes come from the canonical scale --- */
 
-/* Headings — Inter Tight, tight tracking, dense. */
+/* Headings — Marcellus, carved-stone capitals. */
 .font-monument {
   font-family: var(--font-heading);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.06;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  line-height: 1.08;
 }
 
 .text-hero {
   font-size: var(--fs-hero);
-  letter-spacing: -0.03em;
-  line-height: 1.02;
+  letter-spacing: -0.01em;
+  line-height: 1.04;
 }
 
 .text-h1 {
   font-size: var(--fs-h1);
-  line-height: 1.05;
+  line-height: 1.08;
 }
 
 .text-h2 {
   font-size: var(--fs-h2);
-  line-height: 1.1;
+  line-height: 1.12;
 }
 
 /* Sub-heading / group title — one step above card titles. */
 .text-h3 {
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 400;
   font-size: var(--fs-h3);
-  letter-spacing: -0.01em;
-  line-height: 1.25;
+  letter-spacing: -0.005em;
+  line-height: 1.28;
 }
 
 /* Lede — the intro paragraph directly under a heading. */
@@ -134,14 +160,13 @@ body {
   line-height: 1.6;
 }
 
-/* Editorial accent — Fraunces italic. Philosophy page pull-quotes ONLY. */
+/* Editorial accent — Marcellus, reserved for the Philosophy page pull-quotes. */
 .font-editorial {
   font-family: var(--font-editorial);
-  font-style: italic;
-  font-optical-sizing: auto;
+  font-style: normal;
 }
 
-/* Card / block titles that replaced serif italics under V-7. */
+/* Card / block titles. */
 .font-card-title {
   font-family: var(--font-body);
   font-weight: 600;
@@ -149,26 +174,30 @@ body {
   line-height: 1.3;
 }
 
-/* Section eyebrow / kicker — the small line above a heading. */
+/* Labels & small caps — Karla 600, uppercase, 0.19em tracking. Covers
+   section eyebrows / kickers and button labels. */
 .eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
+  font-weight: 600;
   font-size: var(--fs-eyebrow);
-  letter-spacing: 0.22em;
+  letter-spacing: 0.19em;
   text-transform: uppercase;
   color: var(--color-bronze);
 }
 
 .data-tag {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
+  font-weight: 500;
   font-size: var(--fs-label);
   letter-spacing: 0.04em;
 }
 
-/* Button label — mono, uppercase, tighter tracking than eyebrows. */
+/* Button label — Karla 600, uppercase, 0.19em tracking (labels & small caps). */
 .btn-label {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
+  font-weight: 600;
   font-size: var(--fs-label);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.19em;
   text-transform: uppercase;
 }
 
@@ -186,8 +215,8 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    var(--color-olympic-gold) 18%,
-    var(--color-olympic-gold) 82%,
+    var(--color-bronze) 18%,
+    var(--color-bronze) 82%,
     transparent
   );
 }
@@ -200,13 +229,13 @@ select:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid var(--color-ionian);
+  outline: 2px solid var(--color-bronze);
   outline-offset: 3px;
   border-radius: 2px;
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--color-olympic-gold) 35%, transparent);
+  background: color-mix(in srgb, var(--color-bronze) 35%, transparent);
 }
 
 /* --- Scroll-reveal (Philosophy stanzas etc.) --- */
