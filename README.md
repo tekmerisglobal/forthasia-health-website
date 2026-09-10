@@ -2,7 +2,7 @@
 
 Phase A of the Master Website Build blueprint: the public marketing site.
 
-**Stack:** Next.js 15 (App Router) · TypeScript · Tailwind CSS v4 · `next/font` (Inter Tight, Inter, JetBrains Mono, Fraunces)
+**Stack:** Next.js 15 (App Router) · TypeScript · Tailwind CSS v4 · `@fontsource` (Marcellus, Karla)
 
 ## Run
 
@@ -40,29 +40,85 @@ npm start        # serve the production build
 | `/privacy` | Privacy Policy (14 clauses) — effective 4 September 2026 |
 | `/terms` | Terms & Conditions (15 clauses) — effective 4 September 2026 |
 
-## Design system (V-7 correction, current)
+## Brand identity (locked 2026-09-10)
 
-Cinzel is retired site-wide. The type skeleton is now Inter Tight for
-headings, Inter for body/UI, JetBrains Mono for eyebrows/tags/buttons, and
-**Fraunces italic only on `/philosophy`** (the Creed pull-quote and the Two
-Oaths). See `src/app/globals.css` (`@theme` block + `.font-monument` /
-`.font-editorial` / `.font-card-title` / `.eyebrow` / `.btn-label`).
+Private-bank / Aman register: restrained, institutional, one accent. Retired
+Inter Tight / Inter / JetBrains Mono / Fraunces and the Rod of Asclepius icon
+entirely — **the wordmark is the logo; there is no symbol beside it.**
+
+**Palette** — nine colours, `src/app/globals.css` `@theme`, no others allowed:
+`--basalt #12181A` (primary ground) · `--basalt-2 #1B2325` · `--pentelic
+#E9E6DC` (light ground) · `--pentelic-2 #F4F2EC` (lightest surface) ·
+`--bronze #A98D5F` (the one accent) · `--bronze-lift #C4A876` (bronze on dark
+grounds) · `--aegean #1F3A3D` (secondary depth, panels/dividers only) ·
+`--text-2 #565C58` · `--text-3 #868B84`. No blue, no green, no purple.
+
+Every existing `--color-*` token (porcelain, ink-umber, ink-soft, bronze,
+olympic-gold, ionian, olive, terracotta, parchment, hairline-dark) is aliased
+to one of the nine above in the same `@theme` block, so the whole site
+re-themes from one place. Notably: `--color-ionian` (was blue; every link and
+active-nav-state use) and `--color-olympic-gold` (was a brighter gold; every
+"lifted" accent use) both now resolve into the bronze pair; `--color-olive`
+(was green; "verified" tone) → aegean; `--color-terracotta` (was red/orange;
+"alert" tone) → basalt, i.e. serious/dark rather than another hue.
+
+**Typography** — Marcellus (display/headings, inscriptional capitals, weight
+400 only — it has no bold, so `.font-monument`/`.text-h3` don't request one)
+and Karla (body 400, labels/eyebrows/buttons Karla 600 uppercase, 0.19em
+tracking). Both **self-hosted via `@fontsource`** (`@fontsource/marcellus`,
+`@fontsource/karla`, imported in `src/app/layout.tsx`) — never linked from
+Google Fonts, which is blocked in mainland China. No monospace anywhere.
+
+**The wordmark** — `src/components/Wordmark.tsx`: "FORTHASIA" in Marcellus,
+0.30em tracking + a matching 0.30em left margin; "HEALTH" beneath in Karla
+600, 0.36× the size, 0.55em tracking, bronze (bronze-lift on a dark/`onDark`
+ground). `align="left"` in the header, `align="center"` in the footer — the
+only two variants, per the rollout. Static, colour-explicit copies (text
+converted to outlined paths, so they render without the fonts installed)
+live in `public/brand/` — `forthasia-wordmark-*` (name only) and
+`forthasia-lockup-{centred,left}-*` (full two-line lockup) — for `-basalt`
+(dark-on-light) and `-pentelic` (light-on-dark) grounds.
+
+**The device** — a single Greek-meander turn, `public/brand/forthasia-meander-*.svg`
+(regular, stroke-width 10) and `forthasia-meander-heavy-*.svg` (stroke-width
+14, for anything under ~20px — favicon, embroidery). **Never placed beside
+the wordmark** — it's a substitute for it, used only where a wordmark
+physically can't fit. No circle, frame, or rounded joins on the device asset
+itself; the rounded-square favicon background is the one place it gets a
+container. No monogram, shield, caduceus, leaf, helix, or heartbeat line
+anywhere — there is no symbol beyond the meander.
+
+**Favicon** — the heavy meander in `--bronze-lift` on a `--basalt` square,
+6% corner radius: `public/favicon.svg` + `favicon-{16,32,48}.png`,
+`apple-touch-icon.png` (180), `icon-{192,512}.png`, `public/site.webmanifest`,
+all wired via `metadata.icons`/`metadata.manifest` in `layout.tsx`, plus
+`viewport.themeColor = "#12181A"`.
+
+**Regenerating the assets** — `node scripts/generate-brand-assets.js` rebuilds
+everything in `public/brand/` plus the favicon set from the palette/spec
+constants at the top of that script (it renders the wordmark text to real
+glyph outlines via `opentype.js` reading the `@fontsource` files directly, and
+rasterises the favicon with `sharp`). Run it after changing a hex, the
+tracking/size ratios, or the meander path — nothing else should need to.
 
 - Container: 1160px max-width, 24px gutter (`--page-max`, `--gutter`).
 - Section rhythm: 64px mobile / 88px desktop (`Section`, `PageHero` in `src/components/ui.tsx`).
 - Cards: 8px radius, 24px/22px padding, 16px grid gap; dark-section cards use
-  the `rgba(233,226,216,.14)` hairline border (`Card`, `--color-hairline-dark`).
-- Buttons: 44px height, full radius, JetBrains Mono 12px uppercase (`.btn-label`).
-- Nav: single line ≥1100px; 768–1099px collapses to the first four items +
-  a "Menu" dropdown; <768px is the existing hamburger (`src/components/SiteHeader.tsx`).
+  a hairline border derived from pentelic (`Card`, `--color-hairline-dark`).
+- Buttons: 44px height, full radius, Karla 600 12px uppercase (`.btn-label`).
+- Nav: single line ≥1240px (first six + "More"); 768–1239px collapses to the
+  first four + "Menu"; <768px is the hamburger (`src/components/SiteHeader.tsx`).
 
-The mandatory entity line renders site-wide from `src/components/SiteFooter.tsx`,
-in a fixed order (V-9): logo/nav/Client Login → contact block → compliance
-block → legal links (Privacy / Terms / Compliance & Ethics) → entity line →
-master close. Per V-9's privacy revision, the footer publishes only
-`office@kdtino.com` and the corporate HQ line — no personal phone/WeChat/
-WhatsApp, and the public Ops Dashboard link was dropped from the footer
-(Client Login only).
+The mandatory entity line renders site-wide from `src/components/SiteFooter.tsx`:
+centred lockup (generous space above/below) → nav + Secure Inquiries/Corporate
+HQ/Client Portal → compliance block → legal links (Privacy / Terms /
+Compliance & Ethics / Peptide Legal Notice) → entity line → master close.
+
+**Flagged, not touched** (brand assets/tokens only — content and layout were
+off-limits): the warm/cool placeholder gradients on `ImageSlot`/`DiptychPanel`
+(`src/components/ui.tsx`, e.g. `#efe4cf`/`#d9c49a`, `#dfe6ee`/`#b9c7d8`) sit
+outside the nine-colour palette — they're stand-ins for real photography, not
+brand marks, so they were left as-is pending real imagery.
 
 ## Imagery
 
@@ -71,8 +127,9 @@ carries a caption, alt text, and an `[OWN]` / `[STOCK]` / `[OWN/STOCK]` tag per
 the imagery & content manifest — `[OWN]` needs an asset from the client,
 `[STOCK]` needs sourcing. Nothing is a real photo yet; every slot is a
 gradient placeholder standing in for the brief. Global imagery rules baked
-into the copy: no doctors in white coats, no caduceus (single-serpent Rod
-only, see `RodOfAsclepius.tsx`), no before/after or efficacy imagery.
+into the copy: no doctors in white coats, no caduceus or any medical symbol
+(the brand has no icon at all — see "Brand identity" above), no before/after
+or efficacy imagery.
 
 `/compliance` and `/consultation` are intentionally image-free per the manifest.
 

@@ -1,38 +1,14 @@
-import type { Metadata } from "next";
-import { Inter_Tight, Fraunces, Inter, JetBrains_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+// Self-hosted via @fontsource — never linked from Google Fonts (blocked in
+// China and would silently fall back). Marcellus ships one weight (400);
+// Karla is pulled in at 400 (body) and 600 (labels / small caps).
+import "@fontsource/marcellus";
+import "@fontsource/karla/400.css";
+import "@fontsource/karla/600.css";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SITE_URL } from "@/lib/site";
-
-const interTight = Inter_Tight({
-  subsets: ["latin"],
-  weight: ["600", "700"],
-  variable: "--font-inter-tight",
-  display: "swap",
-});
-
-/** Fraunces italic — Philosophy page pull-quotes only. Do not use elsewhere. */
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  style: ["italic"],
-  variable: "--font-fraunces",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-jetbrains-mono",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -54,16 +30,29 @@ export const metadata: Metadata = {
   verification: process.env.NEXT_PUBLIC_GSC_TOKEN
     ? { google: process.env.NEXT_PUBLIC_GSC_TOKEN }
     : undefined,
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+  manifest: "/site.webmanifest",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#12181A",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${interTight.variable} ${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable}`}
-    >
+    <html lang="en">
       <body>
         <a
           href="#main"

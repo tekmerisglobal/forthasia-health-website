@@ -21,7 +21,11 @@ export function Section({
     porcelain: "bg-[var(--color-porcelain)] text-[var(--color-ink-umber)]",
     dim: "bg-[var(--color-porcelain-dim)] text-[var(--color-ink-umber)]",
     ink: "bg-[var(--color-ink-umber)] text-[var(--color-porcelain)]",
-    ionian: "bg-[var(--color-ionian)] text-[var(--color-porcelain)]",
+    // "ionian" is a legacy prop name; the full-bleed panel it renders now
+    // uses aegean (the brand's "secondary depth" colour, used sparingly)
+    // rather than --color-ionian, which every inline link/emphasis use
+    // now resolves to bronze instead.
+    ionian: "bg-[var(--aegean)] text-[var(--color-porcelain)]",
   };
   return (
     <section
@@ -80,8 +84,8 @@ export function PullQuote({
   children: ReactNode;
   cite?: string;
   onDark?: boolean;
-  /** "serif" (Fraunces italic) is reserved for the Philosophy page. Everywhere
-   * else uses the Inter Tight "sans" treatment per the V-7 correction. */
+  /** Both faces are Marcellus (the brand has one display face); "serif" is
+   * the Philosophy-page pull-quote treatment, "sans" is used everywhere else. */
   emphasis?: "sans" | "serif";
 }) {
   const face = emphasis === "serif" ? "font-editorial" : "font-monument";

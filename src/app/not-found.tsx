@@ -1,11 +1,9 @@
 import Link from "next/link";
-import { RodOfAsclepius } from "@/components/RodOfAsclepius";
 
 export default function NotFound() {
   return (
     <section className="shell flex min-h-[60vh] flex-col items-center justify-center py-24 text-center">
-      <RodOfAsclepius className="h-12 w-12 text-[var(--color-olympic-gold)]" />
-      <p className="eyebrow mt-6">Error 404</p>
+      <p className="eyebrow">Error 404</p>
       <h1 className="font-monument text-h1 mt-4 text-[var(--color-ink-umber)]">
         This path is not on the map
       </h1>

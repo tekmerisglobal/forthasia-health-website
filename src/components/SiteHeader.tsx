@@ -11,7 +11,7 @@ import {
   primaryNav,
   type NavItem,
 } from "@/lib/nav";
-import { RodOfAsclepius } from "./RodOfAsclepius";
+import { Wordmark } from "./Wordmark";
 
 const inlineNav = primaryNav.slice(0, NAV_INLINE_COUNT);
 const overflowNav = primaryNav.slice(NAV_INLINE_COUNT);
@@ -93,26 +93,6 @@ function NavDropdown({
   );
 }
 
-function Wordmark() {
-  return (
-    <Link
-      href="/"
-      className="flex items-center gap-3.5"
-      aria-label="Forthasia Health — home"
-    >
-      <RodOfAsclepius className="h-11 w-11 shrink-0 text-[var(--color-olympic-gold)]" />
-      <span className="leading-none">
-        <span className="block font-body text-[1.4rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-ink-umber)]">
-          Forthasia
-        </span>
-        <span className="mt-1.5 block font-mono text-[0.9rem] font-medium uppercase tracking-[0.28em] text-[var(--color-bronze)]">
-          Health
-        </span>
-      </span>
-    </Link>
-  );
-}
-
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -138,7 +118,7 @@ export function SiteHeader() {
       }`}
     >
       <div className="shell flex h-20 items-center justify-between gap-4">
-        <Wordmark />
+        <Wordmark align="left" size="1.1rem" />
 
         {/* Full nav — first 6 + "More", single line, >=1240px */}
         <nav className="hidden min-[1240px]:flex min-[1240px]:items-center min-[1240px]:gap-4" aria-label="Primary">

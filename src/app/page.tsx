@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
-import { RodOfAsclepius } from "@/components/RodOfAsclepius";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   CTAButton,
@@ -89,11 +88,11 @@ export default function HomePage() {
       <section className="relative flex min-h-[78vh] max-h-[760px] items-end overflow-hidden">
         <div
           aria-hidden
-          className="absolute inset-0 [background:linear-gradient(180deg,#1f3a5f_0%,#171310_58%,#171310_100%)]"
+          className="absolute inset-0 [background:linear-gradient(180deg,var(--basalt-2)_0%,var(--basalt)_58%,var(--basalt)_100%)]"
         />
         <div
           aria-hidden
-          className="absolute inset-0 opacity-70 [background:radial-gradient(70%_50%_at_75%_0%,color-mix(in_srgb,#c2a15c_30%,transparent),transparent_60%),radial-gradient(60%_50%_at_10%_100%,color-mix(in_srgb,#6e8b74_22%,transparent),transparent_60%)]"
+          className="absolute inset-0 opacity-70 [background:radial-gradient(70%_50%_at_75%_0%,color-mix(in_srgb,var(--bronze-lift)_26%,transparent),transparent_60%)]"
         />
         {/*
           TODO(video, imagery manifest — Home / Hero):
@@ -103,13 +102,13 @@ export default function HomePage() {
         */}
 
         <div className="shell relative z-10 pb-16 pt-28 text-[var(--color-porcelain)]">
-          <p className="eyebrow text-[color-mix(in_srgb,#c2a15c_92%,white)]">
+          <p className="eyebrow text-[color-mix(in_srgb,var(--bronze-lift)_92%,white)]">
             Forthasia Health // From the land of Olympia. Forth to health.
           </p>
           <h1 className="font-monument text-hero mt-5 max-w-4xl text-balance">
             The Global Standard in Medical Stewardship
           </h1>
-          <p className="text-lede mt-6 max-w-2xl text-[color-mix(in_srgb,#faf7f2_88%,transparent)]">
+          <p className="text-lede mt-6 max-w-2xl text-[color-mix(in_srgb,var(--color-porcelain)_88%,transparent)]">
             Navigating the intersection of advanced regenerative medicine,
             diagnostic confirmation, and longevity. Headquartered in Hainan,
             China.
@@ -122,7 +121,7 @@ export default function HomePage() {
                   <span className="font-card-title text-[var(--color-porcelain)]">
                     {b.label}
                   </span>
-                  <span className="mt-2 block copy-sm text-[color-mix(in_srgb,#faf7f2_70%,transparent)]">
+                  <span className="mt-2 block copy-sm text-[color-mix(in_srgb,var(--color-porcelain)_70%,transparent)]">
                     {b.note}
                   </span>
                   <span
@@ -134,7 +133,7 @@ export default function HomePage() {
                 </>
               );
               const cls =
-                "group rounded-lg border border-[var(--color-hairline-dark)] bg-[color-mix(in_srgb,#171310_35%,transparent)] p-[22px] text-left transition-colors hover:border-[var(--color-olympic-gold)] hover:bg-[color-mix(in_srgb,#171310_55%,transparent)]";
+                "group rounded-lg border border-[var(--color-hairline-dark)] bg-[color-mix(in_srgb,var(--basalt)_35%,transparent)] p-[22px] text-left transition-colors hover:border-[var(--color-olympic-gold)] hover:bg-[color-mix(in_srgb,var(--basalt)_55%,transparent)]";
               return b.external ? (
                 <a key={b.label} href={b.href} className={cls}>
                   {inner}
@@ -194,20 +193,17 @@ export default function HomePage() {
 
       {/* Ethos strip */}
       <Section tone="dim">
-        <div className="grid items-center gap-8 md:grid-cols-[auto_1fr]">
-          <RodOfAsclepius className="h-14 w-14 text-[var(--color-olympic-gold)]" />
-          <div className="grid gap-6 sm:grid-cols-3">
-            <p className="font-card-title text-[var(--color-ionian)]">
-              &ldquo;We don&rsquo;t book journeys. We steward outcomes.&rdquo;
-            </p>
-            <p className="font-card-title text-[var(--color-ionian)]">
-              &ldquo;We Don&rsquo;t Refer. We Verify.&rdquo;
-            </p>
-            <p className="copy-sm text-[var(--color-ink-soft)]">
-              A logistical, translational, and verification facilitator. We do
-              not diagnose, treat, or prescribe.
-            </p>
-          </div>
+        <div className="grid gap-6 sm:grid-cols-3">
+          <p className="font-card-title text-[var(--color-ionian)]">
+            &ldquo;We don&rsquo;t book journeys. We steward outcomes.&rdquo;
+          </p>
+          <p className="font-card-title text-[var(--color-ionian)]">
+            &ldquo;We Don&rsquo;t Refer. We Verify.&rdquo;
+          </p>
+          <p className="copy-sm text-[var(--color-ink-soft)]">
+            A logistical, translational, and verification facilitator. We do
+            not diagnose, treat, or prescribe.
+          </p>
         </div>
       </Section>
 
