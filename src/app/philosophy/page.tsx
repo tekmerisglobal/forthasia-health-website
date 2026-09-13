@@ -61,7 +61,7 @@ const stanzas = [
   {
     eyebrow: "The Greek Lineage · III",
     title: "Sparta, and the name Forthasia",
-    body: "From Sparta comes the upright stance — and the name Forthasia. The Greek root is tekmerion: proof, sure sign, evidence. To stand upright is to be verified: tested until the structure holds under load.",
+    body: "From Sparta comes the upright stance — and the direction our name takes. From the same language comes tekmērion: proof, sure sign, evidence — our standard, not our signature. To stand upright is to be verified: tested until the structure holds under load.",
     diptych: {
       ancient: {
         label: "Taygetos",
@@ -118,7 +118,43 @@ const stanzas = [
   },
 ];
 
+/** "The Name" — Canon v2.0. Verbatim; sits between Stanza IV and The Eastern Integration. */
+const nameParagraphs = [
+  "Every company needs a name. Ours needed a vow. It had to carry both halves of us: the Greek soil we come from and the Asian coast we serve. The striving of Olympia and the uprightness of Sparta. The healer’s hand and the judge’s eye. So we went looking. What we found was not a certainty. It was an argument twenty-six centuries old — and we think that is better.",
+  "East of Sparta, in the marshland on the bank of the Eurotas, stood the sanctuary of a goddess the Spartans called Orthia. Her cult is older than the classical world. Her name survives in inscriptions in more than one form, and scholars have argued over it for more than a century without agreeing. The ancients themselves guessed it came from orthos — upright, straight — the root that still stands today inside orthopaedic and orthodontic. Modern philology traces it further back: to a Proto-Indo-European root whose Vedic cousin, ūrdhvá-, is the word used for the rising of the dawn. On that reading, Orthia is a descendant of the dawn goddess herself — the one who makes things stand upright again at the beginning of the day.",
+  "We do not claim her name. We claim the direction of it.",
+  "Forth — forward: the journey out toward care, and the journey home renewed. Asia — Ἀσία, the Greeks’ own word for the coastlines where our century’s sanctuaries now stand. And hidden inside it, fort: the fortress, the standard held under load. A name that is at once a direction, a place, and a promise of protection.",
+  "From the same language comes the word we keep as our standard rather than our signature: tekmērion — the conclusive proof, the sure sign. Nothing enters our network unproven. Every facility is verified until the structure holds.",
+  "When we searched the world’s registries, no living company held the name — only a dissolved Hong Kong trading house from 1992. The name had been waiting. We registered it, secured forthasiahealth.com, and set the Spartan lambda beside the single-serpent rod of Asclepius: Sparta’s mark guarding the healer’s staff.",
+  "A name is the first promise a company makes. Ours is not an inheritance we dug up. It is one we chose, from a root that has meant the same thing in every language that has carried it, for as long as anyone has been able to check:",
+];
+
+/** Index of the last Greek-lineage stanza (IV, Epidaurus); "The Name" is inserted directly after it. */
+const NAME_AFTER_INDEX = 3;
+
 export default function PhilosophyPage() {
+  // Stanza shells are untouched; tone still alternates on the ORIGINAL index,
+  // so inserting "The Name" shifts nothing above or below it.
+  const renderStanza = (s: (typeof stanzas)[number], i: number) => (
+    <Section key={s.title} tone={i % 2 === 0 ? "porcelain" : "dim"}>
+      <Reveal>
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.05fr] lg:items-center">
+          <div>
+            <SectionHeading eyebrow={s.eyebrow} title={s.title} />
+            <p className="mt-5 max-w-xl text-[var(--color-ink-soft)]">
+              {s.body}
+            </p>
+          </div>
+          <Diptych
+            ancient={s.diptych.ancient}
+            modern={s.diptych.modern}
+            caption={s.diptych.caption}
+          />
+        </div>
+      </Reveal>
+    </Section>
+  );
+
   return (
     <>
       <PageHero
@@ -127,25 +163,28 @@ export default function PhilosophyPage() {
         lede="The brand bridges the ancient legacy of Greek healing with the regulatory environment of Hainan. What follows is read slowly."
       />
 
-      {stanzas.map((s, i) => (
-        <Section key={s.title} tone={i % 2 === 0 ? "porcelain" : "dim"}>
-          <Reveal>
-            <div className="grid gap-10 lg:grid-cols-[1fr_1.05fr] lg:items-center">
-              <div>
-                <SectionHeading eyebrow={s.eyebrow} title={s.title} />
-                <p className="mt-5 max-w-xl text-[var(--color-ink-soft)]">
-                  {s.body}
-                </p>
-              </div>
-              <Diptych
-                ancient={s.diptych.ancient}
-                modern={s.diptych.modern}
-                caption={s.diptych.caption}
-              />
-            </div>
-          </Reveal>
-        </Section>
-      ))}
+      {stanzas.slice(0, NAME_AFTER_INDEX + 1).map(renderStanza)}
+
+      {/* The Name — Canon v2.0. Same block pattern as The Matching Doctrine below. */}
+      <Section tone="dim">
+        <Reveal>
+          <SectionHeading eyebrow="The Name" title="Why ForthAsia." />
+          <div className="mt-6 max-w-2xl space-y-5 text-[var(--color-ink-soft)]">
+            {nameParagraphs.map((p) => (
+              <p key={p.slice(0, 40)}>{p}</p>
+            ))}
+          </div>
+          <div className="mt-10">
+            <PullQuote emphasis="serif">
+              Stand upright. Be verified. Go forth.
+            </PullQuote>
+          </div>
+        </Reveal>
+      </Section>
+
+      {stanzas
+        .slice(NAME_AFTER_INDEX + 1)
+        .map((s, i) => renderStanza(s, i + NAME_AFTER_INDEX + 1))}
 
       {/* The Matching Doctrine — the "why" of verification (V-13 §1). */}
       <Section tone="dim">
