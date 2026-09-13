@@ -54,8 +54,16 @@
   --fs-fine: 0.75rem;                         /* 12px       legal fine print only */
 }
 
-* {
-  border-color: color-mix(in srgb, var(--color-bronze) 22%, transparent);
+/* Default border colour (bronze), in the base layer so any utility class —
+   border-[var(--color-X)] included — still wins the cascade over it. Fixed
+   2026-09-13: this rule used to sit unlayered, which beat every utility's
+   explicit border colour regardless of specificity and silently flattened
+   every accent border (Callout tones, PriceCard's gold border, etc.) to
+   plain bronze. */
+@layer base {
+  * {
+    border-color: color-mix(in srgb, var(--color-bronze) 22%, transparent);
+  }
 }
 
 html {

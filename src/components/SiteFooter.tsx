@@ -55,6 +55,7 @@ export function SiteFooter() {
             {[
               ...primaryNav,
               { label: "Treatments", href: "/treatments" },
+              { label: "Verified Second Opinion", href: "/second-opinion" },
               { label: "Peptides", href: "/peptides" },
               { label: "Partners", href: "/partners" },
             ].map((item) => (

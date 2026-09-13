@@ -401,6 +401,51 @@ export function StatCard({
   );
 }
 
+/**
+ * A single priced-product card — eyebrow, price, inclusions, CTA. First use:
+ * `/second-opinion`. Reusable for any future flat-fee product.
+ */
+export function PriceCard({
+  eyebrow,
+  price,
+  priceNote,
+  includes,
+  cta,
+  className = "",
+}: {
+  eyebrow: string;
+  price: ReactNode;
+  priceNote?: ReactNode;
+  includes: string[];
+  cta: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div
+      className={`rounded-lg border-2 border-[var(--color-olympic-gold)] bg-[var(--color-porcelain)] p-8 ${className}`}
+    >
+      <p className="eyebrow text-[var(--color-bronze)]">{eyebrow}</p>
+      <p className="font-monument text-h1 mt-3 text-[var(--color-ink-umber)]">
+        {price}
+      </p>
+      {priceNote ? (
+        <p className="mt-2 copy-sm text-[var(--color-ink-soft)]">{priceNote}</p>
+      ) : null}
+      <ul className="mt-6 space-y-3">
+        {includes.map((i) => (
+          <li key={i} className="flex gap-2.5 text-[var(--color-ink-soft)]">
+            <span aria-hidden className="mt-0.5 shrink-0 text-[var(--color-olive)]">
+              ✓
+            </span>
+            <span>{i}</span>
+          </li>
+        ))}
+      </ul>
+      <div className="mt-8">{cta}</div>
+    </div>
+  );
+}
+
 export function SectionHeading({
   eyebrow,
   title,

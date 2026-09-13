@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const statics = [
     "/",
     "/consultation",
+    "/second-opinion",
     "/partners",
     "/treatments",
     "/peptides",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { IntakeForm } from "@/components/IntakeForm";
 import { RodOfAsclepius } from "@/components/RodOfAsclepius";
 import { Callout, PageHero, Section, SectionHeading } from "@/components/ui";
@@ -94,6 +95,24 @@ export default function ConsultationPage() {
               Records are accepted only through the HIIC Vault, after your case
               reference is issued.
             </Callout>
+
+            <div className="rounded-lg border border-[color-mix(in_srgb,var(--color-olympic-gold)_45%,transparent)] bg-[color-mix(in_srgb,var(--color-olympic-gold)_8%,transparent)] p-6">
+              <p className="font-card-title text-[var(--color-ink-umber)]">
+                Want a guaranteed answer, priced upfront?
+              </p>
+              <p className="mt-2 copy-sm text-[var(--color-ink-soft)]">
+                This preliminary enquiry is free, but not guaranteed to
+                proceed. For a paid, guaranteed specialist board review and a
+                written viability verdict on a fixed timeline, see{" "}
+                <Link
+                  href="/second-opinion"
+                  className="text-[var(--color-ionian)] underline decoration-[var(--color-olympic-gold)] decoration-2 underline-offset-4 hover:text-[var(--color-ink-umber)]"
+                >
+                  The Verified Second Opinion
+                </Link>
+                .
+              </p>
+            </div>
           </aside>
         </div>
       </Section>

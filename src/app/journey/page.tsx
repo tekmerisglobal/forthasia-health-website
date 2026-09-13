@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import {
   Callout,
@@ -102,12 +103,23 @@ export default function JourneyPage() {
                   ))}
                 </ul>
                 {i === 0 ? (
-                  <div className="mt-6">
+                  <div className="mt-6 space-y-4">
                     <Callout tone="gold" title="Crucial selling point">
                       The visa-free window is designed to be enough for a
                       state-of-the-art diagnostic confirmation trip on its own —
                       before any treatment decision is made.
                     </Callout>
+                    <p className="copy-sm text-[var(--color-ink-soft)]">
+                      Want this step priced and guaranteed, remotely, before
+                      you travel?{" "}
+                      <Link
+                        href="/second-opinion"
+                        className="text-[var(--color-ionian)] underline decoration-[var(--color-olympic-gold)] decoration-2 underline-offset-4 hover:text-[var(--color-ink-umber)]"
+                      >
+                        See The Verified Second Opinion
+                      </Link>
+                      .
+                    </p>
                   </div>
                 ) : null}
               </div>

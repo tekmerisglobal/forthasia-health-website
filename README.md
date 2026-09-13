@@ -29,6 +29,7 @@ npm start        # serve the production build
 | `/compliance` | Compliance & ethics boundaries (text-only, deliberately) |
 | `/founder` | Konstantino "Tino" Dimitropoulos |
 | `/consultation` | Contact / intake form → `POST /api/intake` |
+| `/second-opinion` | The Verified Second Opinion — priced, guaranteed specialist-board review + written viability verdict. **Price is a placeholder** — see Known TODOs. |
 | `/partners` | Affiliations & Partners — "Stewards of Health, together." network scope, verification-not-payment terms, `partners@` apply CTA |
 | `/treatments` | Treatments hub — links the six spoke pages |
 | `/treatments/[slug]` | SEO spokes: `oncology`, `orthopaedics`, `dental`, `regenerative`, `executive-screening`, `tcm` (`src/content/treatments.ts`) |
@@ -116,6 +117,11 @@ Rules unchanged: no faces/white coats, no caduceus, no before/after.
 - **Imagery**: replace every `[OWN]`/`[STOCK]` placeholder with real assets
   per the manifest above; swap the hero gradient for the coastline → Boao
   Lecheng video loop.
+- **`/second-opinion` price** (`PRICE_USD` in `src/app/second-opinion/page.tsx`)
+  is a literal `[PRICE TBC]` placeholder, by request (2026-09-13) — no real
+  figure has been confirmed. Find/replace every occurrence with the real flat
+  fee before treating this page as live; until then it reads honestly as
+  "not yet set," same convention as the `[OWN]`/`[STOCK]` image tags below.
 - Headless CMS and i18n are **deliberately deferred** (ruling): static
   content is correct while copy is still moving; add a CMS only once
   non-technical staff need to edit directly. English-only launch; Mandarin
