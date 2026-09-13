@@ -4,6 +4,7 @@ import { SITE_URL } from "@/lib/site";
 import { treatments } from "@/content/treatments";
 import { wellness } from "@/content/wellness";
 import { destinations } from "@/content/destinations";
+import { journal } from "@/content/journal";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -12,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/",
     "/consultation",
     "/second-opinion",
+    "/journal",
     "/partners",
     "/treatments",
     "/peptides",
@@ -40,10 +42,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority,
     }));
 
+  const journalEntries: MetadataRoute.Sitemap = journal.map((p) => ({
+    url: `${SITE_URL}/journal/${p.slug}`,
+    lastModified: new Date(p.date),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
   return [
     ...staticEntries,
     ...spoke("/treatments", treatments, 0.9),
     ...spoke("/wellness", wellness, 0.8),
     ...spoke("/destinations", destinations, 0.8),
+    ...journalEntries,
   ];
 }

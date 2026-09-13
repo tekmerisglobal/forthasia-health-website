@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   Callout,
   CTAButton,
@@ -12,15 +13,17 @@ import {
 export const metadata: Metadata = {
   title: "The Founder",
   description:
-    "Konstantino “Tino” Dimitropoulos — Registered Chinese-Medicine Practitioner & Naturopath (Australia, AHPRA/ANTA), 30+ years across Asian health systems.",
+    "Konstantino “Tino” Dimitropoulos — Registered Chinese-Medicine Practitioner & Naturopath (Australia, AHPRA/ANTA), 30+ years across Asian health systems, 6+ years living in Hainan.",
 };
 
 const registrations = [
   "Registered Chinese-Medicine Practitioner & Naturopath — Australia (AHPRA / ANTA)",
   "30+ years across Asian health systems",
-  "Former General Manager, Summit Club — an exclusive Beijing VIP club",
+  "Former General Manager, Summit Club, an exclusive Beijing VIP club — a career built in private members' clubs and high-end hospitality management before medicine",
   "Training under WHO initiatives (Sri Lanka)",
   "Years inside Chinese hospitals learning traditional Chinese medicine; study at Wudang Shan",
+  "6+ years living in Hainan — a foreigner, resident on the island, who has been the patient here himself before he was ever the facilitator",
+  "A network of verified specialists and clinical colleagues across Hainan and the mainland — not a solo practice",
 ];
 
 export default function FounderPage() {
@@ -29,7 +32,7 @@ export default function FounderPage() {
       <PageHero
         eyebrow="The Founder"
         title={"Konstantino “Tino” Dimitropoulos"}
-        lede="Thirty years bridging Greek lineage and Eastern integrated medicine — and the person accountable for the Forthasia standard."
+        lede="Thirty years bridging Greek lineage and Eastern integrated medicine — and the person accountable for the Forthasia standard. A foreigner helping foreigners, resident in Hainan for six years and counting, not a local platform describing the island from the outside."
       />
 
       <Section>
@@ -85,6 +88,19 @@ export default function FounderPage() {
       </Section>
 
       <Section>
+        <SectionHeading
+          eyebrow="Written by the patient, not the marketer"
+          title="The Founder's Journal"
+          lede="First-person, unfiltered dispatches from using the same hospitals we facilitate for you — written before he knew the outcome, not after, for a case study."
+        />
+        <div className="mt-8">
+          <CTAButton href="/journal" variant="outline">
+            Read the journal
+          </CTAButton>
+        </div>
+      </Section>
+
+      <Section tone="dim">
         <Callout tone="ionian" title="Scope">
           The founder&rsquo;s registrations are held in Australia. Forthasia
           Health does not provide clinical care; it coordinates, translates, and
