@@ -25,7 +25,45 @@ const timeline = [
   ["Day 0–1", "Records submitted to the HIIC Vault; the fee is confirmed and the case opened."],
   ["Day 1–2", "Certified medical translation, both directions."],
   ["Day 3–6", "Review by a specialist board at the TEKMERIS GLOBAL-verified hospital matched to your condition."],
-  ["Day 5–7", "Your written viability verdict and an itemised cost-range estimate are delivered."],
+  ["Day 5–7", "The document is delivered — all six sections above, in writing, whatever the verdict."],
+];
+
+/**
+ * The deliverable, section by section. This is the product: a document,
+ * not a conversation. Every cost figure in it is hospital-sourced and
+ * labelled illustrative; every clinical statement is the board's, not ours.
+ */
+const deliverable = [
+  {
+    n: "01",
+    title: "Your case, restated",
+    body: "What you submitted, what was translated, and the exact question the specialist board was asked — so you can see the review was of your case, not a template.",
+  },
+  {
+    n: "02",
+    title: "The verdict, and the options considered",
+    body: "The board's written viability verdict: yes, no, or conditional, with its reasoning. Where more than one mainstream approach exists, each is set out objectively — indications, known limitations, and what it would mean for your case. The final treatment plan is decided by you and the treating physician, never by us.",
+  },
+  {
+    n: "03",
+    title: "The facility, and the ones we didn't shortlist",
+    body: "Which verified facility was matched and why — the department's case volume for your specific pathway, the reviewing clinicians' credentials as confirmed by the facility, translation quality, and emergency readiness. And the facilities we considered but did not shortlist, with the reason. Evidence over adjectives.",
+  },
+  {
+    n: "04",
+    title: "The itemised cost, and the whole journey",
+    body: "A hospital-sourced, itemised cost range — procedure, imaging, admission days, follow-up — confirmed in writing by the facility before you book. Then the full-journey estimate: flights, accommodation near the facility, transfers, in-person translation, and any second visit — so you can compare honestly against staying home. If staying home is the better option, the document says so.",
+  },
+  {
+    n: "05",
+    title: "Entry, timing and logistics",
+    body: "Your entry route (visa-free or by hospital invitation letter), the transfer from Haikou Meilan to the facility, the recommended length of stay, seasonal timing, and where to stay relative to the hospital.",
+  },
+  {
+    n: "06",
+    title: "Recovery and the return home",
+    body: "Practical, non-clinical notes for the days after: the recovery window, what is advisable on the island and what to avoid, and what the home continuum looks like — a translated discharge summary and your records forwarded to your own physician.",
+  },
 ];
 
 const faqs: Faq[] = [
@@ -35,7 +73,11 @@ const faqs: Faq[] = [
   },
   {
     q: "What happens if my case isn't viable?",
-    a: "You keep the written verdict. The fee covers the review itself, not a particular outcome — if the board's answer is no, or conditional, you still have a documented, specialist-reviewed answer to take elsewhere, and no further obligation to us.",
+    a: "You keep the full document. The fee covers the review itself, not a particular outcome — if the board's answer is no, or conditional, you still have a documented, specialist-reviewed answer to take elsewhere, and no further obligation to us. And if the honest conclusion is that staying home is the better option, the document says exactly that.",
+  },
+  {
+    q: "Which hospitals and clinicians will the document name?",
+    a: "The verified facility your case was matched to, the reviewing department, and the clinicians' credentials as confirmed by that facility — plus the facilities we considered and did not shortlist, with the reason. Named institutions are public facilities; a place in our network is earned by independent audit only, never by payment.",
   },
   {
     q: "Who actually reviews my case?",
@@ -57,7 +99,7 @@ export default function SecondOpinionPage() {
       <PageHero
         eyebrow="Priced. Flat Fee. Before You Travel."
         title="The Verified Second Opinion"
-        lede="Submit your records once. A specialist board at a verified hospital reviews your case and returns a written viability verdict and cost-range estimate in 5–7 days — for one flat fee, disclosed upfront, whether or not you proceed."
+        lede="Submit your records once. A specialist board at a verified hospital reviews your case and returns a six-section written document in 5–7 days — the verdict, the options, the facility, the itemised and whole-journey cost, the logistics, the recovery — for one flat fee, disclosed upfront, whether or not you proceed."
       >
         <CTAButton href="#price">See the fee &amp; what's included</CTAButton>
       </PageHero>
@@ -70,11 +112,11 @@ export default function SecondOpinionPage() {
               price={PRICE_USD}
               priceNote="No hospital commission is built into this fee, and it is not a deposit toward treatment."
               includes={[
-                "Specialist board review at a hospital matched to your condition",
+                "Specialist board review at a verified hospital matched to your condition",
                 "Certified medical translation, both directions",
-                "A written viability verdict — yes, no, or conditional — in 5–7 days",
-                "An itemised, hospital-sourced cost-range estimate",
-                "Zero obligation to proceed — if the answer is no, you keep the report",
+                "A six-section written document in 5–7 days: verdict, options, facility, itemised cost, logistics, recovery",
+                "The whole-journey cost — flights, stay, transfers, translation — set against staying home",
+                "Zero obligation to proceed — if the answer is no, you keep the document",
               ]}
               cta={
                 <a
@@ -103,6 +145,35 @@ export default function SecondOpinionPage() {
 
       <Section tone="dim">
         <SectionHeading
+          eyebrow="The deliverable"
+          title="What's in the document, section by section"
+          lede="You are paying for a document, not a conversation. This is what it contains — every time, whatever the verdict."
+        />
+        <ol className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {deliverable.map((d) => (
+            <Reveal as="li" key={d.n}>
+              <div className="h-full rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] px-[22px] py-6">
+                <span className="data-tag text-[var(--color-olympic-gold)]">
+                  Section {d.n}
+                </span>
+                <p className="font-card-title mt-2 text-[var(--color-ink-umber)]">
+                  {d.title}
+                </p>
+                <p className="mt-3 copy-sm text-[var(--color-ink-soft)]">{d.body}</p>
+              </div>
+            </Reveal>
+          ))}
+        </ol>
+        <p className="mt-6 max-w-3xl text-xs leading-relaxed text-[var(--color-bronze)]">
+          Cost figures are hospital-sourced and illustrative until confirmed
+          by the facility. Clinical statements are the reviewing board&rsquo;s,
+          not ours. What the document is not: a diagnosis, a treatment plan,
+          or a booking.
+        </p>
+      </Section>
+
+      <Section>
+        <SectionHeading
           eyebrow="Compare"
           title="Free enquiry vs. the Verified Second Opinion"
         />
@@ -129,10 +200,11 @@ export default function SecondOpinionPage() {
               The Verified Second Opinion
             </p>
             <p className="mt-3 copy-sm text-[var(--color-ink-soft)]">
-              A paid, guaranteed product. Your case is reviewed by a named
+              A paid, guaranteed product. Your case is reviewed by a
               specialist board on a fixed timeline regardless of outcome,
-              and you receive a written verdict and cost-range estimate —
-              not just a next step.
+              and you receive the six-section document — verdict, options,
+              facility, itemised and whole-journey cost, logistics,
+              recovery — not just a next step.
             </p>
             <a
               href="#price"
