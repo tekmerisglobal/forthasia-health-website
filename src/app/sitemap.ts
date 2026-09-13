@@ -20,8 +20,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...primaryNav.map((n) => n.href),
     "/privacy",
     "/terms",
+    "/editorial-policy",
   ];
-  const legal = new Set(["/privacy", "/terms"]);
+  const legal = new Set(["/privacy", "/terms", "/editorial-policy"]);
 
   const staticEntries: MetadataRoute.Sitemap = statics.map((route) => ({
     url: `${SITE_URL}${route}`,

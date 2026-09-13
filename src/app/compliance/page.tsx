@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   Callout,
   CTAButton,
@@ -88,7 +89,18 @@ export default function CompliancePage() {
             How we verify facilities →
           </CTAButton>
         </div>
-        <p className="data-tag mt-8 text-[var(--color-bronze)]">
+        <p className="mt-8 max-w-2xl copy-sm text-[var(--color-ink-soft)]">
+          How we write about medicine — sourcing, Medical Director review,
+          corrections, and the public review log — is set out in our{" "}
+          <Link
+            href="/editorial-policy"
+            className="text-[var(--color-ionian)] underline decoration-[var(--color-olympic-gold)] decoration-2 underline-offset-4 hover:text-[var(--color-ink-umber)]"
+          >
+            Editorial &amp; Medical-Review Policy
+          </Link>
+          .
+        </p>
+        <p className="data-tag mt-6 text-[var(--color-bronze)]">
           Terms of Service, Privacy Policy, and the Patient Facilitation
           Agreement are provided during secure intake and are pending final
           counsel review.

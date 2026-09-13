@@ -22,6 +22,7 @@ const legalLinks = [
   { label: "Privacy Policy", href: "/privacy" },
   { label: "Terms & Conditions", href: "/terms" },
   { label: "Compliance & Ethics (HIIC)", href: "/compliance" },
+  { label: "Editorial & Medical-Review Policy", href: "/editorial-policy" },
   { label: "Peptide Therapy — Legal Notice", href: "/peptides/legal" },
 ];
 
