@@ -1,8 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-  <rect width="48" height="48" rx="8" fill="#171310"/>
-  <g fill="none" stroke="#c2a15c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="24" y1="6" x2="24" y2="42"/>
-    <path d="M24 10c6 0 6 5 0 5s-6 5 0 5 6 5 0 5-6 5 0 5 6 5 0 5"/>
-    <path d="M24 10c-2.2 0-3.4-1.5-3.4-3 0-1.2 1-2.2 2.2-2.2 0.9 0 1.6 0.5 1.9 1.2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Favicon: the compact Forthasia mark, Olympic Gold on Ink Umber. One serpent, never two. -->
+  <rect width="100" height="100" rx="16" fill="#171310"/>
+  <g transform="translate(10 10) scale(0.8)" fill="none" stroke="#c2a15c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 92 L50 8 L86 92"/>
+    <path d="M50 50 L50 88"/>
+    <path d="M39 48.5 A11 11 0 1 1 61 48.5"/>
+    <path d="M41 58 C62 62 38 76 52 88"/>
+    <circle cx="41" cy="58" r="3" fill="#c2a15c" stroke="none"/>
   </g>
 </svg>
