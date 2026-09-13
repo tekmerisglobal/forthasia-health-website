@@ -11,9 +11,8 @@ import {
   SectionHeading,
 } from "@/components/ui";
 
-// TODO before launch (README "Known TODOs"): PRICE_USD is a placeholder.
-// Confirm the real flat fee and replace every occurrence below.
-const PRICE_USD = "[PRICE TBC]";
+/** The flat fee, locked 2026-09-14. Credited in full toward the concierge package on proceeding. */
+const PRICE_USD = "USD 500";
 
 export const metadata: Metadata = {
   title: "The Verified Second Opinion — A Priced, Guaranteed Read Before You Travel",
@@ -95,7 +94,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Does the fee go toward treatment if I proceed?",
-    a: "Ask your coordinator when your case opens — this is confirmed case by case and we don't want to state a blanket policy here that doesn't hold for every pathway.",
+    a: "The USD 500 fee is credited in full toward your ForthAsia Health concierge package if you proceed with us. It is not a deposit toward hospital fees — those you pay the treating facility directly, on its own quotation, with our facilitation fee disclosed separately.",
   },
 ];
 
@@ -107,16 +106,32 @@ export default function SecondOpinionPage() {
         title="The Verified Second Opinion"
         lede="Submit your records once. A specialist board at a verified hospital reviews your case, and seven itemised deliverables land in your vault in 5–7 days — the verdict, the pathways compared, the named team, the money in writing, what we ruled out, the recovery preview, and the honest line — for one flat fee, disclosed upfront, whether or not you proceed."
       >
-        <CTAButton href="#price">See the fee &amp; what's included</CTAButton>
+        <div className="max-w-2xl">
+          <p className="text-[var(--color-ink-umber)]">
+            <span className="font-card-title">{PRICE_USD}</span> — Verified
+            Second Opinion fee, credited in full toward your concierge package
+            if you proceed with ForthAsia Health.
+          </p>
+          <p className="mt-3 text-xs leading-relaxed text-[var(--color-bronze)]">
+            Payable on signing of the Medical Records Authorization &amp;
+            Privacy Consent and the Facilitation Agreement. Covers professional
+            translation, specialist-board submission, and the seven-part
+            written deliverable. If the honest verdict is &lsquo;not viable
+            here,&rsquo; you pay nothing further.
+          </p>
+          <div className="mt-6">
+            <CTAButton href="#price">See what&rsquo;s included</CTAButton>
+          </div>
+        </div>
       </PageHero>
 
       <Section id="price">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <Reveal>
             <PriceCard
-              eyebrow="Flat fee — paid once"
+              eyebrow="Flat fee — paid once, no hospital commission"
               price={PRICE_USD}
-              priceNote="No hospital commission is built into this fee, and it is not a deposit toward treatment."
+              priceNote="Verified Second Opinion fee, credited in full toward your concierge package if you proceed with ForthAsia Health. No hospital commission is built into it."
               includes={[
                 "Specialist board review at a verified hospital matched to your condition",
                 "Certified medical translation, both directions",
