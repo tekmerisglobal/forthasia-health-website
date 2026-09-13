@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/consultation",
     "/second-opinion",
     "/journal",
+    "/the-standard",
     "/partners",
     "/treatments",
     "/peptides",

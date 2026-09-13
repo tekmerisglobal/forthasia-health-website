@@ -56,6 +56,7 @@ export function SiteFooter() {
             {[
               ...primaryNav,
               { label: "Treatments", href: "/treatments" },
+              { label: "The Facility Standard", href: "/the-standard" },
               { label: "Verified Second Opinion", href: "/second-opinion" },
               { label: "The Founder's Journal", href: "/journal" },
               { label: "Peptides", href: "/peptides" },
