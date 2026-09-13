@@ -22,11 +22,11 @@ export default function JournalPage() {
       />
 
       <Section>
-        <SectionHeading eyebrow="Dispatches" title="Latest entries" />
+        <SectionHeading eyebrow="Dispatches" title="Read in sequence" />
         <ul className="mt-10 grid list-none gap-6 md:grid-cols-2">
           {journal
             .slice()
-            .sort((a, b) => (a.date < b.date ? 1 : -1))
+            .sort((a, b) => (a.date > b.date ? 1 : -1))
             .map((post) => (
               <Reveal as="li" key={post.slug}>
                 <Link

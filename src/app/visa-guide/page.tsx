@@ -31,6 +31,10 @@ export default function VisaGuidePage() {
           of 86 countries, with &ldquo;medical treatment&rdquo; an explicitly
           permitted purpose, up to 30 days, entering Hainan directly.
         </p>
+        <p className="mt-4 max-w-3xl copy-sm text-[var(--color-ink-soft)]">
+          Most journeys land at Haikou Meilan International Airport — the
+          Boao Lecheng zone is roughly a 1.5-hour transfer from there.
+        </p>
       </Section>
 
       <Section tone="dim">

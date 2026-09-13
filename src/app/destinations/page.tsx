@@ -110,6 +110,7 @@ export default function DestinationsPage() {
             label="Illustrative public data — zone-published; figures move, confirm at consultation"
             facts={[
               "20 km² zone in Qionghai; established 2013, now part of the Hainan Free Trade Port",
+              "~1.5-hour transfer from Haikou Meilan International Airport to the zone",
               "~36 medical institutions operating · ~60 foreign-funded enterprises",
               "570+ overseas-approved medicines and devices used first-in-China here",
               "~40-hour approval pathway vs ~60 days nationally; customs clearance in 3–7 days",
