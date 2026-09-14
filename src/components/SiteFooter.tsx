@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { portalUrl, primaryNav } from "@/lib/nav";
-import { RodOfAsclepius } from "./RodOfAsclepius";
+import { LogoLockup } from "./brand/Logo";
 
 /**
  * Blueprint §6 — the Entity Line MUST render in the footer of every public page.
@@ -32,17 +32,8 @@ export function SiteFooter() {
       {/* 1. Logo + nav + Secure Inquiries / Corporate HQ / Client Portal (V-11) */}
       <div className="shell grid gap-12 py-16 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
-          <div className="flex items-center gap-3.5">
-            <RodOfAsclepius className="h-11 w-11 text-[var(--color-olympic-gold)]" />
-            <span className="leading-none">
-              <span className="block font-body text-[1.4rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-porcelain)]">
-                Forthasia
-              </span>
-              <span className="mt-1.5 block font-mono text-[0.9rem] font-medium uppercase tracking-[0.28em] text-[var(--color-olympic-gold)]">
-                Health
-              </span>
-            </span>
-          </div>
+          {/* Footer lockup — the mark at its 200px cut, gold on ink. */}
+          <LogoLockup tone="dark" markSize={200} layout="stacked" />
           <p className="data-tag mt-6 text-[color-mix(in_srgb,var(--color-bronze)_90%,white)]">
             FORTHASIA HEALTH // FROM THE LAND OF OLYMPIA. FORTH TO HEALTH.
           </p>

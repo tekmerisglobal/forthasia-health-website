@@ -11,7 +11,7 @@ import {
   primaryNav,
   type NavItem,
 } from "@/lib/nav";
-import { RodOfAsclepius } from "./RodOfAsclepius";
+import { LogoLockup } from "./brand/Logo";
 
 const inlineNav = primaryNav.slice(0, NAV_INLINE_COUNT);
 const overflowNav = primaryNav.slice(NAV_INLINE_COUNT);
@@ -93,24 +93,9 @@ function NavDropdown({
   );
 }
 
+/** Header lockup — the mark at its 24px nav cut, ink on porcelain. */
 function Wordmark() {
-  return (
-    <Link
-      href="/"
-      className="flex items-center gap-3.5"
-      aria-label="Forthasia Health — home"
-    >
-      <RodOfAsclepius className="h-11 w-11 shrink-0 text-[var(--color-olympic-gold)]" />
-      <span className="leading-none">
-        <span className="block font-body text-[1.4rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-ink-umber)]">
-          Forthasia
-        </span>
-        <span className="mt-1.5 block font-mono text-[0.9rem] font-medium uppercase tracking-[0.28em] text-[var(--color-bronze)]">
-          Health
-        </span>
-      </span>
-    </Link>
-  );
+  return <LogoLockup href="/" tone="light" markSize={24} />;
 }
 
 export function SiteHeader() {

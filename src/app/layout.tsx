@@ -49,6 +49,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en",
     siteName: "Forthasia Health",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Forthasia Health" }],
   },
   robots: { index: true, follow: true },
   verification: process.env.NEXT_PUBLIC_GSC_TOKEN
