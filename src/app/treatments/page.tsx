@@ -42,7 +42,7 @@ export default function TreatmentsHubPage() {
       <PageHero
         eyebrow="Treatments"
         title="Treatments we facilitate, verified before we recommend"
-        lede="Forthasia Health matches your diagnosis to a verified department, then coordinates records, visas, translation and recovery around it. Every pathway below is routed through Hainan's Boao Lecheng zone or mainland China, and audited on the ground by TEKMERIS GLOBAL. We facilitate; treating physicians decide all care."
+        lede="Forthasia Health matches your diagnosis to a department that is independently verified before any introduction — status published per facility — then coordinates records, visas, translation and recovery around it. Every pathway below is routed through Hainan's Boao Lecheng zone or mainland China. We facilitate; treating physicians decide all care."
       />
 
       <Section>

@@ -67,7 +67,7 @@ export default function JourneyPage() {
       <PageHero
         eyebrow="The Patient Journey"
         title="The 4-Phase Journey"
-        lede="A definitive second opinion, a verified facility, a steward on the ground, and a documented return home."
+        lede="A definitive second opinion, a facility independently verified before any introduction, a steward on the ground, and a documented return home."
       >
         <CTAButton href="/consultation">Begin secure intake</CTAButton>
       </PageHero>

@@ -10,7 +10,7 @@
   --color-porcelain: #faf7f2; /* Light base — main backgrounds */
   --color-ink-umber: #171310; /* Dark sections — footer, portal, high-contrast text */
   --color-olympic-gold: #c2a15c; /* Primary accent — CTAs, dividers, active states */
-  --color-olive: #6e8b74; /* Verified / success — TEKMERIS badges */
+  --color-olive: #6e8b74; /* Success — visa-eligibility result cards, form success. Never a "verified" badge. */
   --color-terracotta: #c4644a; /* Alert / conditional — visa warnings, compliance */
   --color-ionian: #1f3a5f; /* Secondary accent — links, secondary headers */
   --color-bronze: #8c6d2f; /* Discipline — subtle borders, metadata, footer text */

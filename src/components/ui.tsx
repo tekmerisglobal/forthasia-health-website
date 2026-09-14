@@ -386,6 +386,37 @@ export function Callout({
   );
 }
 
+/**
+ * Factual verification-status chip — the replacement for any "green
+ * verified" badge (reconciliation, 2026-09-14). It states a fact and nothing
+ * else: "Record on file · <date>" once a facility's record has closed,
+ * otherwise "No record yet". Neutral bronze; never green. A chip that states
+ * facts cannot contradict a witness register.
+ */
+export function RecordChip({
+  closedOn,
+  className = "",
+}: {
+  /** ISO date the facility's record closed. Omit while none has. */
+  closedOn?: string;
+  className?: string;
+}) {
+  const label = closedOn
+    ? `Record on file · ${new Date(closedOn).toLocaleDateString("en-GB", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      })}`
+    : "No record yet";
+  return (
+    <span
+      className={`data-tag inline-flex shrink-0 items-center rounded-full border border-[color-mix(in_srgb,var(--color-bronze)_45%,transparent)] px-2.5 py-0.5 text-[var(--color-bronze)] ${className}`}
+    >
+      {label}
+    </span>
+  );
+}
+
 export function StatCard({
   value,
   label,

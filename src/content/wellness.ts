@@ -69,7 +69,7 @@ export const wellness: PageEntry[] = [
     bullets: [
       "A licensed physician directs every procedure",
       "Device authenticity and servicing verified",
-      "No paid listings, no commissions",
+      "No paid listings; any introduction fee is disclosed",
     ],
     faqs: [
       {

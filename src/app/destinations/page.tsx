@@ -9,6 +9,7 @@ import {
   FactsBand,
   ImageSlot,
   PageHero,
+  RecordChip,
   Section,
   SectionHeading,
   StatCard,
@@ -124,8 +125,9 @@ export default function DestinationsPage() {
         <p className="data-tag mt-6 text-[var(--color-bronze)]">
           We describe access to advanced therapies and the outcome of a viability
           assessment. We do not diagnose, treat, prescribe, or guarantee a
-          clinical outcome. Named institutions are public facilities; the
-          FORTHASIA NETWORK badge applies only after independent audit.
+          clinical outcome. Named institutions are public facilities; a
+          facility shows &ldquo;Record on file&rdquo; with a date only once its
+          record closes — until then, &ldquo;No record yet.&rdquo;
         </p>
       </Section>
 
@@ -286,8 +288,8 @@ export default function DestinationsPage() {
         <Callout tone="gold" title="Readiness — your visit" className="mt-8">
           Our founder has personally inspected longevity facilities in the
           zone — they are ready to receive international patients today.
-          Every facility is independently verified under the TEKMERIS GLOBAL
-          protocol before it appears in your proposal.
+          Every facility is independently verified before any introduction —
+          status published per facility.
         </Callout>
 
         <Callout tone="ionian" title="Compliance" className="mt-6">
@@ -353,15 +355,17 @@ export default function DestinationsPage() {
           ].map((item) => (
             <li
               key={item}
-              className="rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] px-[22px] py-4 copy-sm text-[var(--color-ink-soft)]"
+              className="flex items-start justify-between gap-3 rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] px-[22px] py-4 copy-sm text-[var(--color-ink-soft)]"
             >
-              {item}
+              <span>{item}</span>
+              <RecordChip />
             </li>
           ))}
         </ul>
         <p className="data-tag mt-6 text-[var(--color-bronze)]">
-          Named institutions are public facilities we facilitate access to.
-          The FORTHASIA NETWORK badge applies only after independent audit.
+          Named institutions are public facilities we facilitate access to. A
+          facility shows &ldquo;Record on file&rdquo; with a date only once its
+          record closes — until then, &ldquo;No record yet.&rdquo;
         </p>
       </Section>
 
@@ -421,8 +425,9 @@ export default function DestinationsPage() {
           ))}
         </ul>
         <p className="data-tag mt-6 text-[var(--color-bronze)]">
-          The mainland ecosystems we navigate — examples only. The FORTHASIA
-          NETWORK badge applies only after independent audit.
+          The mainland ecosystems we navigate — examples only. A facility
+          shows &ldquo;Record on file&rdquo; with a date only once its record
+          closes — until then, &ldquo;No record yet.&rdquo;
         </p>
 
         <Callout tone="gold" className="mt-8">
@@ -475,9 +480,7 @@ export default function DestinationsPage() {
                   <p className="font-card-title text-[var(--color-ink-umber)]">
                     {s.place}
                   </p>
-                  <span className="data-tag shrink-0 text-[var(--color-bronze)]">
-                    Partner network — build phase
-                  </span>
+                  <RecordChip />
                 </div>
                 <p className="mt-3 copy-sm text-[var(--color-ink-soft)]">{s.body}</p>
               </div>

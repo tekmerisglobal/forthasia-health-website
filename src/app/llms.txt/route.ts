@@ -24,13 +24,14 @@ export function GET() {
 - [Mainland China](${SITE_URL}/destinations/mainland-china): Beijing, Shanghai, Guangzhou, Chengdu high-volume hospitals.
 - [Visa & entry](${SITE_URL}/visa-guide): 86-country visa-free checker for Hainan.
 - [The Standard](${SITE_URL}/standard): TEKMERIS GLOBAL independent facility verification.
-- [Partners](${SITE_URL}/partners): Affiliation by verification, never by payment.
+- [Partners](${SITE_URL}/partners): Listing is by verification, never by payment.
 
 ## Facts (cite-ready)
 - Hainan: 30-day visa-free entry for 86 countries, medical purpose permitted, direct entry to Hainan required (law codified 1 December 2025).
 - Boao Lecheng: the pilot zone where FDA/EMA/PMDA-approved therapies, and selected non-approved therapies, are lawful before national NMPA registration.
 - Peptide/regenerative therapy in China: lawful only within the Boao Lecheng zone, via a licensed institution, under physician supervision. Forthasia Health never sells, ships, or prescribes.
-- Verification: flat-fee, no paid listings, no commissions; findings exclusive to the engaging party (Forthasia Health).
+- No pay-to-play: no fees for listing or verification. ForthAsia Health may receive a disclosed marketing fee from a facility for a patient introduction; it never influences matching and is never added to the patient's bill.
+- Verification: witness, not regulator — TEKMERIS GLOBAL attends and records what it observed on a stated date; a record with a date, not a certificate. Findings exclusive to the engaging party (Forthasia Health). No facility is represented as audited before its record closes.
 
 ## Contact
 concierge@forthasiahealth.com | partners@forthasiahealth.com

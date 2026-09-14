@@ -19,7 +19,7 @@ npm start        # serve the production build
 | --- | --- |
 | `/` | Home — hero, "Why Forthasia" trust band, regulatory-oasis stats, journey teaser |
 | `/philosophy` | The Greek lineage (Elis, Olympia, Sparta, Epidaurus) + Eastern integration, the Creed, Two Oaths |
-| `/standard` | The Forthasia Standard — TEKMERIS GLOBAL verification (5 checks, independence band, cross-link to the sibling TEKMERIS GLOBAL supply-chain site) |
+| `/standard` | The Forthasia Standard — built from `FH-FACILITY-STANDARD-DRAFT-v0.1-2026-09-14.md` (the draft is the page): witness-not-regulator, the four stages, annex 4A, the six "never claims", status band; NETWORK STATUS line + scope paragraph; independence band with the disclosed marketing-fee sentence. `/the-standard` 301s here. [PROVISIONAL] sections gated off. |
 | `/destinations` | Boao Lecheng, Dental & Oral Health (price table), Anti-Aging & Longevity, TCM & Rehabilitation, the network ecosystem, market facts, secondary pathways (Bangkok, Mumbai) |
 | `/journey` | The 4-Phase Journey |
 | `/recovery` | Recovery & Tourism — the 8-Route program, curated pairings, recovery-friendly activities |

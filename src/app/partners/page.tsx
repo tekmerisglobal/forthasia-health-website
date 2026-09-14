@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   title: "Affiliations & Partners",
   description:
-    "Stewards of Health, together. FORTHASIA HEALTH builds verified affiliations across hospitals, clinics, medi-spas, retreats, laboratories, insurers and hospitality partners. Entry is by verification, never by payment.",
+    "Stewards of Health, together. FORTHASIA HEALTH builds affiliations — verified before any introduction, status published per facility — across hospitals, clinics, medi-spas, retreats, laboratories, insurers and hospitality partners. Listing is by verification, never by payment.",
 };
 
 const environments = [
@@ -31,8 +31,8 @@ const terms = [
     body: "We bring coordinated, documented international patients. Diagnosis, treatment and prescribing remain entirely yours — FORTHASIA HEALTH does not practise medicine.",
   },
   {
-    lead: "Entry is by verification, never by payment.",
-    body: "TEKMERIS GLOBAL — the independent partner we engage — audits every facility on site, against QC/QA standards, before it reaches a patient's proposal. No paid listings. No commissions for placement.",
+    lead: "Listing is by verification, never by payment.",
+    body: "TEKMERIS GLOBAL — the independent partner we engage — attends every facility on site and records what was observed before it reaches a patient's proposal. No paid listings. A marketing fee for introductions, where agreed, is disclosed, is never a condition of listing, and is never weighed in clinical matching.",
   },
   {
     lead: "Re-verified on cycle.",
@@ -46,14 +46,14 @@ export default function PartnersPage() {
       <PageHero
         eyebrow="Affiliations"
         title="Stewards of Health, Together."
-        lede="We build verified affiliations across every environment that touches a healthier life. You keep full clinical authority; we bring coordinated, documented international patients and carry the logistics, translation and records custody around them."
+        lede="We build affiliations — verified before any introduction, status published per facility — across every environment that touches a healthier life. You keep full clinical authority; we bring coordinated, documented international patients and carry the logistics, translation and records custody around them."
       />
 
       <Section>
         <SectionHeading
           eyebrow="The network"
           title="Every environment that touches a healthier life"
-          lede="One country, many pathways — matched to the patient in front of us, not to a commission."
+          lede="One country, many pathways — matched to the patient in front of us, not to a fee."
         />
         <ul className="mt-8 grid gap-3 sm:grid-cols-2">
           {environments.map((e) => (
@@ -90,7 +90,7 @@ export default function PartnersPage() {
           ))}
         </ol>
         <p className="mt-6 max-w-2xl copy-sm text-[var(--color-ink-soft)]">
-          The full verification method — the five checks, the independence model
+          The full verification method — witness not regulator, the four stages, what it never claims
           — lives on{" "}
           <Link
             href="/standard"
@@ -114,7 +114,7 @@ export default function PartnersPage() {
         <EmailCTA
           className="mt-8"
           email="partners@forthasiahealth.com"
-          body="Apply for affiliation. Send your corporate credentials and a short overview of your facility, scope and pathways. We reply with the verification requirements for your category — no facility pays to be listed, verified, or matched."
+          body="Apply for affiliation. Send your corporate credentials and a short overview of your facility, scope and pathways. We reply with the verification requirements for your category — no facility pays to be listed, verified, or re-verified. A marketing fee for introductions, where agreed, is disclosed, is never a condition of listing, and is never weighed in clinical matching."
         />
       </Section>
     </>

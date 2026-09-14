@@ -32,7 +32,7 @@ const organizationSchema = {
 const divisions = [
   [
     "Medical Journeys",
-    "Oncology, orthopaedics, cardiac and dental care — matched to a verified hospital and routed through Hainan or mainland China.",
+    "Oncology, orthopaedics, cardiac and dental care — matched to a hospital independently verified before any introduction, status published per facility, and routed through Hainan or mainland China.",
     "/treatments",
   ],
   [
@@ -232,14 +232,41 @@ export default function HomePage() {
               {[
                 "Practitioner-founded — registered acupuncturist & naturopath (Australia)",
                 "On the ground in Haikou",
-                "Independent verification — every facility audited on site by TEKMERIS GLOBAL",
-                "Facilitator ethics — you pay the hospital directly; our fee is disclosed",
+                "Independent verification — every facility is independently verified before any introduction — status published per facility",
+                "Verification is never for sale. Introductions are disclosed. The condition chooses the hospital.",
               ].map((b) => (
                 <li
                   key={b}
                   className="rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] px-[22px] py-5 copy-sm text-[var(--color-ink-soft)]"
                 >
                   {b}
+                </li>
+              ))}
+            </ul>
+
+            {/* How We're Paid — the scoped canonical trio (reconciliation, 2026-09-14). */}
+            <p className="eyebrow mt-10">How We&rsquo;re Paid</p>
+            <ul className="mt-4 grid gap-4 sm:grid-cols-3">
+              {[
+                [
+                  "Verification",
+                  "Hospitals and facilities pay nothing to be listed, verified, or re-verified. Verification is funded solely by our flat fee per facility, per cycle, paid by ForthAsia Health.",
+                ],
+                [
+                  "Introductions",
+                  "Some facilities pay ForthAsia Health a disclosed marketing fee when we introduce a patient. It is never added to your medical bill and never influences clinical matching — the match is decided and documented before any commercial term is considered.",
+                ],
+                [
+                  "You",
+                  "You pay us a concierge fee, and the hospital directly for all medical fees. Every fee is disclosed in your agreement before you sign.",
+                ],
+              ].map(([t, d]) => (
+                <li
+                  key={t}
+                  className="rounded-lg border border-[color-mix(in_srgb,var(--color-bronze)_28%,transparent)] bg-[var(--color-porcelain)] px-[22px] py-5"
+                >
+                  <span className="data-tag text-[var(--color-olympic-gold)]">{t}</span>
+                  <p className="mt-2 copy-sm text-[var(--color-ink-soft)]">{d}</p>
                 </li>
               ))}
             </ul>

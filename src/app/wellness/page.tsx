@@ -92,7 +92,9 @@ export default function WellnessPage() {
           verification. Wellness and medi-spa facilities enter the network
           through the same TEKMERIS GLOBAL discipline, adapted to their scope:
           practitioner licensing, hygiene and device authenticity, consent
-          practice, emergency readiness. No paid listings. No commissions.{" "}
+          practice, emergency readiness. No paid listings. A marketing fee for
+          introductions, where agreed, is disclosed, is never a condition of
+          listing, and is never weighed in clinical matching.{" "}
           <a
             href="mailto:partners@forthasiahealth.com"
             className="text-[var(--color-ionian)] underline decoration-[var(--color-olympic-gold)] decoration-2 underline-offset-4 hover:text-[var(--color-ink-umber)]"

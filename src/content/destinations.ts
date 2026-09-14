@@ -14,7 +14,7 @@ export const destinations: PageEntry[] = [
       "Hainan visa-free medical",
     ],
     answerFirst:
-      "Hainan is China's designated medical-tourism province. The Boao Lecheng pilot zone gives lawful early access to foreign-approved therapies; Haikou hosts tertiary hospitals; Sanya has accredited TCM centres and a recovery-friendly coast. Entry is visa-free for 86 nationalities for 30 days, with medical purpose permitted. Forthasia Health verifies facilities here on the ground.",
+      "Hainan is China's designated medical-tourism province. The Boao Lecheng pilot zone gives lawful early access to foreign-approved therapies; Haikou hosts tertiary hospitals; Sanya has accredited TCM centres and a recovery-friendly coast. Entry is visa-free for 86 nationalities for 30 days, with medical purpose permitted. Facilities here are independently verified before any introduction — status published per facility.",
     blocks: [
       {
         h2: "Boao Lecheng",
@@ -28,7 +28,7 @@ export const destinations: PageEntry[] = [
     bullets: [
       "30-day visa-free entry for 86 countries, medical purpose permitted",
       "Direct entry to Hainan required (law codified 1 December 2025)",
-      "Facilities verified on site by TEKMERIS GLOBAL",
+      "Facilities independently verified before any introduction — status published per facility",
     ],
     faqs: [
       {
@@ -69,7 +69,7 @@ export const destinations: PageEntry[] = [
     bullets: [
       "Grade A Tertiary teaching hospitals",
       "Oncology, complex surgery, full-mouth dental rehabilitation",
-      "Named as examples only; department verified per pathway",
+      "Named as examples only; verification status published per facility",
     ],
     faqs: [
       {
@@ -96,7 +96,7 @@ export const destinations: PageEntry[] = [
       "Thailand dental tourism",
     ],
     answerFirst:
-      "Thailand is a mature medical-tourism destination: internationally accredited hospitals in Bangkok and Phuket, strong English-language coordination, and established strengths in aesthetics, dentistry, orthopaedics and wellness. Forthasia Health facilitates Thailand as a secondary pathway — chosen when the procedure, price or logistics favour it over China — and verifies facilities the same way.",
+      "Thailand is a mature medical-tourism destination: internationally accredited hospitals in Bangkok and Phuket, strong English-language coordination, and established strengths in aesthetics, dentistry, orthopaedics and wellness. Forthasia Health facilitates Thailand as a secondary pathway — chosen when the procedure, price or logistics favour it over China. Thailand is not yet researched at facility level; pathways open on request, and only after the specific facility has been researched and attended under the Standard.",
     blocks: [
       {
         h2: "Where Thailand fits",
@@ -104,7 +104,7 @@ export const destinations: PageEntry[] = [
       },
       {
         h2: "Partner network status",
-        body: "Thai facilities enter the network through the same verification discipline. Named partners are published only once an agreement and an on-site audit are complete.",
+        body: "Thailand and India enter the same regime facility-by-facility, on request; until a facility’s record closes, it is not represented as audited, verified, or in-network.",
       },
     ],
     bullets: [
@@ -115,7 +115,7 @@ export const destinations: PageEntry[] = [
     faqs: [
       {
         q: "Should I choose Thailand or China?",
-        a: "It depends on the procedure. We compare verified options on capability, total cost, wait time and logistics, and recommend the one that serves your case — not the one that pays us, because none do.",
+        a: "It depends on the procedure. We compare verified options on capability, total cost, wait time and logistics, and recommend the one that serves your case — the match is decided and documented before any commercial term is considered.",
       },
     ],
     lastReviewed: "2026-09-08",
@@ -133,7 +133,7 @@ export const destinations: PageEntry[] = [
       "Kerala Ayurveda",
     ],
     answerFirst:
-      "India's NABH- and JCI-accredited tertiary hospitals have deep experience in cardiac surgery, transplants and complex procedures at some of the lowest costs anywhere, with Kerala's Ayurvedic coast for recovery. Forthasia Health facilitates India as a secondary pathway — selected when the procedure or price favours it — and verifies each facility before it reaches your proposal.",
+      "India's NABH- and JCI-accredited tertiary hospitals have deep experience in cardiac surgery, transplants and complex procedures at some of the lowest costs anywhere, with Kerala's Ayurvedic coast for recovery. Forthasia Health facilitates India as a secondary pathway — selected when the procedure or price favours it. India is not yet researched at facility level; pathways open on request, and only after the specific facility has been researched and attended under the Standard.",
     blocks: [
       {
         h2: "Where India fits",
@@ -141,7 +141,7 @@ export const destinations: PageEntry[] = [
       },
       {
         h2: "Partner network status",
-        body: "Indian facilities are verified the same way as every other. Named partners follow an agreement and an on-site audit.",
+        body: "Thailand and India enter the same regime facility-by-facility, on request; until a facility’s record closes, it is not represented as audited, verified, or in-network.",
       },
     ],
     bullets: [

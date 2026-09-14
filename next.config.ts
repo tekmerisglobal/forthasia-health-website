@@ -8,6 +8,12 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  // One Standard URL. /the-standard was a short-lived working route for the
+  // Facility Standard draft; the draft is now the body of /standard.
+  async redirects() {
+    // statusCode 301 explicitly — Next's `permanent: true` would emit a 308.
+    return [{ source: "/the-standard", destination: "/standard", statusCode: 301 }];
+  },
 };
 
 export default nextConfig;

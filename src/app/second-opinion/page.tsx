@@ -17,13 +17,13 @@ const PRICE_USD = "USD 500";
 export const metadata: Metadata = {
   title: "The Verified Second Opinion — A Priced, Guaranteed Read Before You Travel",
   description:
-    "A guaranteed specialist board review of your case. Seven itemised deliverables in 5–7 days — the clinical verdict, three pathways compared, the named team, the hospital quotation in writing, what we ruled out, the recovery preview, the honest line. One flat fee, disclosed upfront — no hospital commission, no obligation to proceed.",
+    "A guaranteed specialist board review of your case. Seven itemised deliverables in 5–7 days — the clinical verdict, three pathways compared, the named team, the hospital quotation in writing, what we ruled out, the recovery preview, the honest line. One flat fee, disclosed upfront — no facility fee built in, no obligation to proceed.",
 };
 
 const timeline = [
   ["Day 0–1", "Records submitted to the HIIC Vault; the fee is confirmed and the case opened."],
   ["Day 1–2", "Certified medical translation, both directions."],
-  ["Day 3–6", "Review by a specialist board at the TEKMERIS GLOBAL-verified hospital matched to your condition."],
+  ["Day 3–6", "Review by a specialist board at the hospital matched to your condition — independently verified before any introduction, status published per facility."],
   ["Day 5–7", "All seven deliverables land in your vault, in writing, whatever the verdict."],
 ];
 
@@ -74,7 +74,7 @@ const deliverable = [
 const faqs: Faq[] = [
   {
     q: "Is this the same as the free preliminary consultation?",
-    a: "No. The free enquiry on our Consultation page is a screening conversation — our coordination team reviews what you send and, if your case aligns with our facilitation parameters, issues a portal link within 24 hours. The Verified Second Opinion is a paid, guaranteed product: a specialist board at a verified hospital reviews your case regardless of outcome, and all seven itemised deliverables — verdict, pathways, named team, money in writing, what we ruled out, recovery preview, the honest line — land in your vault on a fixed timeline.",
+    a: "No. The free enquiry on our Consultation page is a screening conversation — our coordination team reviews what you send and, if your case aligns with our facilitation parameters, issues a portal link within 24 hours. The Verified Second Opinion is a paid, guaranteed product: a specialist board at a hospital independently verified before any introduction reviews your case regardless of outcome, and all seven itemised deliverables — verdict, pathways, named team, money in writing, what we ruled out, recovery preview, the honest line — land in your vault on a fixed timeline.",
   },
   {
     q: "What happens if my case isn't viable?",
@@ -82,11 +82,11 @@ const faqs: Faq[] = [
   },
   {
     q: "Which hospitals and clinicians will the document name?",
-    a: "The verified facility your case was matched to, the reviewing department, and the clinicians' credentials as confirmed by that facility — plus the facilities we considered and did not shortlist, with the reason. Named institutions are public facilities; a place in our network is earned by independent audit only, never by payment.",
+    a: "The facility your case was matched to, the reviewing department, and the clinicians' credentials as confirmed by that facility — plus the facilities we considered and did not shortlist, with the reason. Named institutions are public facilities; listing is by verification, never by payment — no facility pays to be listed, verified, or re-verified.",
   },
   {
     q: "Who actually reviews my case?",
-    a: "A specialist board at a hospital matched to your specific condition, inside our TEKMERIS GLOBAL-verified network — the same verification standard described on The Standard. We do not review cases ourselves; we are facilitators, not clinicians.",
+    a: "A specialist board at a hospital matched to your specific condition, with its verification status published per facility by TEKMERIS GLOBAL, our independent verification partner — the same standard described on The Standard. We do not review cases ourselves; we are facilitators, not clinicians.",
   },
   {
     q: "Is my medical data secure?",
@@ -104,7 +104,7 @@ export default function SecondOpinionPage() {
       <PageHero
         eyebrow="Priced. Flat Fee. Before You Travel."
         title="The Verified Second Opinion"
-        lede="Submit your records once. A specialist board at a verified hospital reviews your case, and seven itemised deliverables land in your vault in 5–7 days — the verdict, the pathways compared, the named team, the money in writing, what we ruled out, the recovery preview, and the honest line — for one flat fee, disclosed upfront, whether or not you proceed."
+        lede="Submit your records once. A specialist board at a hospital independently verified before any introduction reviews your case, and seven itemised deliverables land in your vault in 5–7 days — the verdict, the pathways compared, the named team, the money in writing, what we ruled out, the recovery preview, and the honest line — for one flat fee, disclosed upfront, whether or not you proceed."
       >
         <div className="max-w-2xl">
           <p className="text-[var(--color-ink-umber)]">
@@ -129,11 +129,11 @@ export default function SecondOpinionPage() {
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <Reveal>
             <PriceCard
-              eyebrow="Flat fee — paid once, no hospital commission"
+              eyebrow="Flat fee — paid once, no facility fee built in"
               price={PRICE_USD}
-              priceNote="Verified Second Opinion fee, credited in full toward your concierge package if you proceed with ForthAsia Health. No hospital commission is built into it."
+              priceNote="Verified Second Opinion fee, credited in full toward your concierge package if you proceed with ForthAsia Health. No facility fee of any kind is built into it."
               includes={[
-                "Specialist board review at a verified hospital matched to your condition",
+                "Specialist board review at a hospital matched to your condition — independently verified before any introduction, status published per facility",
                 "Certified medical translation, both directions",
                 "Seven itemised deliverables in 5–7 days: verdict, pathways compared, named team, money in writing, what we ruled out, recovery preview, the honest line",
                 "A whole-trip cost model — concierge fee, flights, accommodation bands, transfers — and a treat-here vs. treat-at-home comparison",
@@ -168,7 +168,7 @@ export default function SecondOpinionPage() {
         <SectionHeading
           eyebrow="The deliverable"
           title="What actually lands in your vault."
-          lede="Seven items, every time, whatever the verdict. Verification status throughout is as audited on site by TEKMERIS GLOBAL, our independent verification partner."
+          lede="Seven items, every time, whatever the verdict. Verification status throughout is TEKMERIS GLOBAL's — our independent verification partner — published per facility as records close."
         />
         <ol className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {deliverable.map((d) => (
@@ -260,8 +260,11 @@ export default function SecondOpinionPage() {
 
       <Section>
         <Callout tone="gold" title="On independence">
-          No facility pays to be listed, verified, or matched, and this fee
-          carries no hospital commission — the same independence standard
+          No facility pays to influence this verdict. Some facilities pay
+          ForthAsia Health a disclosed marketing fee when we introduce a
+          patient. It is never added to your medical bill and never influences
+          clinical matching — the match is decided and documented before any
+          commercial term is considered. The same independence standard is
           described on{" "}
           <Link
             href="/standard"
